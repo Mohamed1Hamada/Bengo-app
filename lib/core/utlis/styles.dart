@@ -65,4 +65,18 @@ abstract class AppStyles {
     fontWeight: FontWeight.w400,
     height: 1.2,
   );
+
+  static const TextStyle onBoardTitleStyle = TextStyle(
+    fontSize: 34,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.1,
+  );
+
+  static const TextStyle onBoardSubtitleStyle = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.2,
+  );
 }
