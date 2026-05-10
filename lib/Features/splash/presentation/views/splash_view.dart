@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:bengo_app/Features/splash/presentation/views/widgets/splash_view_body.dart';
 import 'package:bengo_app/core/utlis/app_router.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +17,11 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    navigateToOnBoard();
+    _startNavigationTimer();
   }
 
-  void navigateToOnBoard() {
-    _navigationTimer = Timer(const Duration(seconds: 3), () {
+  void _startNavigationTimer() {
+    _navigationTimer = Timer(const Duration(seconds: 5), () {
       if (!mounted) return;
       context.go(AppRouter.kOnBoardView);
     });

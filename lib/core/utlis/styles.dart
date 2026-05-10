@@ -53,6 +53,22 @@ abstract class AppStyles {
     colors: [kGradientStartColor, kGradientMidColor, kGradientEndColor],
   );
 
+  // ====================== OnBoard Styles ======================
+  static TextStyle onBoardTitleStyle = const TextStyle(
+    fontSize: 34,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.1,
+  );
+
+  static TextStyle onBoardSubtitleStyle = const TextStyle(
+    fontSize: 22, // ← تم تصليحه
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.3,
+  );
+
+  // Splash Styles
   static const TextStyle splashTitleStyle = TextStyle(
     fontSize: 48,
     fontWeight: FontWeight.w800,
@@ -60,23 +76,9 @@ abstract class AppStyles {
     height: 1,
   );
 
-  static TextStyle splashSubtitleStyle = Styles.textStyle18.copyWith(
-    color: Colors.white,
+  static TextStyle splashSubtitleStyle = Styles.textStyle20.copyWith(
+    color: Colors.white.withOpacity(0.89),
     fontWeight: FontWeight.w400,
-    height: 1.2,
-  );
-
-  static const TextStyle onBoardTitleStyle = TextStyle(
-    fontSize: 34,
-    fontWeight: FontWeight.w800,
-    color: Colors.white,
-    height: 1.1,
-  );
-
-  static const TextStyle onBoardSubtitleStyle = TextStyle(
-    fontSize: 25,
-    fontWeight: FontWeight.w800,
-    color: Colors.white,
     height: 1.2,
   );
 }

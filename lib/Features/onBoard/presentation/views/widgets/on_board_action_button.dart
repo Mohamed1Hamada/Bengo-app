@@ -1,53 +1,49 @@
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-enum OnBoardActionButtonType { primary, secondary }
-
-class OnBoardActionButton extends StatelessWidget {
-  const OnBoardActionButton({
+class CustomButton extends StatelessWidget {
+  const CustomButton({
     super.key,
     required this.text,
-    required this.type,
-    required this.width,
-    required this.height,
-    required this.borderRadius,
-    required this.fontSize,
+    this.isPrimary = true,
     this.onPressed,
+
+    this.borderWidth = 1.5,
   });
 
   final String text;
-  final OnBoardActionButtonType type;
-  final double width;
-  final double height;
-  final double borderRadius;
-  final double fontSize;
+  final bool isPrimary;
   final VoidCallback? onPressed;
+
+  final double borderWidth;
 
   @override
   Widget build(BuildContext context) {
-    final isPrimary = type == OnBoardActionButtonType.primary;
-
     return SizedBox(
-      width: width,
-      height: height,
-      child: ElevatedButton(
-        onPressed: onPressed ?? () {},
-        style: ElevatedButton.styleFrom(
-          elevation: isPrimary ? 8 : 0,
-          shadowColor: Colors.black.withValues(alpha: 0.18),
+      width: 550.w,
+      height: 118.h,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
           backgroundColor: isPrimary
               ? Colors.white
-              : Colors.white.withValues(alpha: 0.34),
-          foregroundColor: isPrimary ? const Color(0xFF242424) : Colors.white,
+              : Colors.white.withValues(alpha: 0.18),
+
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(40.r),
+            side: BorderSide(color: Colors.transparent),
           ),
+
+          padding: EdgeInsets.zero,
+          elevation: isPrimary ? 8 : 0,
+          shadowColor: isPrimary ? Color(0xFF272323) : Colors.transparent,
         ),
         child: Text(
           text,
-          style: TextStyle(
-            fontSize: fontSize,
+          style: Styles.textStyle20.copyWith(
             fontWeight: FontWeight.w700,
-            color: isPrimary ? const Color(0xFF242424) : Colors.white,
+            color: isPrimary ? const Color(0xFF272323) : Colors.white,
           ),
           textDirection: TextDirection.rtl,
         ),

@@ -1,38 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardBackgroundCurves extends StatelessWidget {
   const OnBoardBackgroundCurves({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final width = constraints.maxWidth;
-        final height = constraints.maxHeight;
-        final scaleX = width / 696;
-        final scaleY = height / 1568;
-        final circleScale = scaleX;
-
-        return Stack(
-          clipBehavior: Clip.hardEdge,
-          children: [
-            Positioned(
-              top: -171 * scaleY,
-              left: 337 * scaleX,
-              child: _FilledCircle(size: 640 * circleScale, opacity: 0.16),
-            ),
-            Positioned(
-              top: -166 * scaleY,
-              left: 337 * scaleX,
-              child: _CircleStroke(
-                size: 665 * circleScale,
-                opacity: 0.33,
-                strokeWidth: 2 * circleScale,
-              ),
-            ),
-          ],
-        );
-      },
+    return Stack(
+      clipBehavior: Clip.hardEdge,
+      children: [
+        Positioned(
+          top: -171.h,
+          left: 337.w,
+          child: _FilledCircle(size: 640.r, opacity: 0.16),
+        ),
+        Positioned(
+          top: -166.h,
+          left: 337.w,
+          child: _CircleStroke(size: 665.r, opacity: 0.33, strokeWidth: 2.r),
+        ),
+      ],
     );
   }
 }
