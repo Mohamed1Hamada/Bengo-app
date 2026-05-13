@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/Auth/presentation/views/login_view.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ abstract class AppRouter {
   // Routes Names
   static const String kSplashView = '/';
   static const String kOnBoardView = '/onBoard';
+  static const String kLoginView = '/loginview';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -21,6 +23,13 @@ abstract class AppRouter {
         path: kOnBoardView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const OnBoardView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kLoginView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const LoginView(),
           state: state,
         ),
       ),

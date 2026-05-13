@@ -1,10 +1,12 @@
 import 'package:bengo_app/Features/onBoard/presentation/view_models/on_board_view_model.dart';
-import 'package:bengo_app/Features/onBoard/presentation/views/widgets/on_board_action_button.dart';
+import 'package:bengo_app/core/utlis/app_router.dart';
+import 'package:bengo_app/core/utlis/widget/custom_button.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/widgets/on_board_background_curves.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/widgets/on_board_illustration.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class OnBoardViewBody extends StatelessWidget {
   const OnBoardViewBody({super.key, required this.viewModel});
@@ -66,7 +68,9 @@ class OnBoardViewBody extends StatelessWidget {
                       CustomButton(
                         text: viewModel.loginButtonText,
                         isPrimary: true,
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.kLoginView);
+                        },
                       ),
 
                       SizedBox(height: 50.h),

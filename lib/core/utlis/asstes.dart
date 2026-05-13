@@ -8,4 +8,5 @@ class AsstesData {
   static const onBoardIcon = 'assets/images/Icon.png';
   static const onBoardShadows = 'assets/images/Shadows.png';
   static const onBoardSideTable = 'assets/images/SideTable.png';
+  static const googleIcon = 'assets/images/LoginForm.png';
 }
