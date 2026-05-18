@@ -73,7 +73,9 @@ class SignUpViewBody extends StatelessWidget {
               ),
 
               SizedBox(height: 30.h),
-              CustomAuthButton(text: "إنشاء حساب"),
+              CustomAuthButton(text: "إنشاء حساب", onPressed: () { 
+                GoRouter.of(context).push(AppRouter.kCompleteProfileView);
+               },),
 
               SizedBox(height: 25.h),
 

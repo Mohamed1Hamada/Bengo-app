@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAuthButton extends StatelessWidget {
-  const CustomAuthButton({super.key, required this.text});
+  const CustomAuthButton({super.key, required this.text, required this.onPressed});
   final String text;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomAuthButton extends StatelessWidget {
           ),
           elevation: 0,
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: Styles.textStyle16.copyWith(
