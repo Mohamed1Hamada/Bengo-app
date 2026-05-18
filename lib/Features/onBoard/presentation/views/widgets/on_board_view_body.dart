@@ -1,6 +1,5 @@
-import 'package:bengo_app/Features/onBoard/presentation/view_models/on_board_view_model.dart';
 import 'package:bengo_app/core/utlis/app_router.dart';
-import 'package:bengo_app/core/utlis/widget/custom_button.dart';
+import 'package:bengo_app/core/utlis/widget/custom_onBoard_button.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/widgets/on_board_background_curves.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/widgets/on_board_illustration.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
@@ -9,9 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class OnBoardViewBody extends StatelessWidget {
-  const OnBoardViewBody({super.key, required this.viewModel});
-
-  final OnBoardViewModel viewModel;
+  const OnBoardViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +45,7 @@ class OnBoardViewBody extends StatelessWidget {
                         height: 20,
                       ), // مسافة صغيرة بين الإليستريشن والنص
                       Text(
-                        viewModel.title,
+                        'BENGO',
                         style: AppStyles.onBoardTitleStyle.copyWith(
                           fontSize: 80.sp,
                         ),
@@ -56,7 +53,7 @@ class OnBoardViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h),
                       Text(
-                        viewModel.subtitle,
+                        'منصتك التعليمية',
                         style: AppStyles.onBoardSubtitleStyle.copyWith(
                           fontSize: 80.sp,
                         ),
@@ -65,8 +62,8 @@ class OnBoardViewBody extends StatelessWidget {
                       ),
                       SizedBox(height: 100.h), // المسافة بين النص والزر الأول
                       // الأزرار
-                      CustomButton(
-                        text: viewModel.loginButtonText,
+                      CustomOnBoardButton(
+                        text: 'تسجيل دخول',
                         isPrimary: true,
                         onPressed: () {
                           GoRouter.of(context).push(AppRouter.kLoginView);
@@ -75,10 +72,12 @@ class OnBoardViewBody extends StatelessWidget {
 
                       SizedBox(height: 50.h),
 
-                      CustomButton(
-                        text: viewModel.createAccountButtonText,
+                      CustomOnBoardButton(
+                        text: 'إنشاء حساب',
                         isPrimary: false,
-                        onPressed: () {},
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.kSignUpView);
+                        },
                       ),
                     ],
                   ),

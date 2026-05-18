@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,14 @@ class LoginViewBody extends StatelessWidget {
       child: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 30.w),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(height: 260.h),
+              SizedBox(height: 180.h),
+
               Text(
-                "مرحباً بك",
-                style: Styles.textStyle34.copyWith(
+                "إنشاء حساب جديد",
+                style: Styles.textStyle30.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Cairo',
@@ -34,47 +36,57 @@ class LoginViewBody extends StatelessWidget {
               ),
               SizedBox(height: 20.h),
               Text(
-                "سجل دخولك للمتابعة",
-                style: Styles.textStyle16.copyWith(
-                  color: Colors.white70,
-                  fontFamily: 'Cairo',
-                  fontWeight: FontWeight.w400,
-                ),
+                "الان BENGO  انضم الي ",
+                style: Styles.textStyle16.copyWith(color: Colors.white70),
               ),
 
-              SizedBox(height: 60.h),
+              SizedBox(height: 30.h),
 
-              const CustomTextField(
+              // 2. زر جوجل (الشفاف - CustomButton)
+              CustomGoogleButton(text: ' Google التسجيل بـ '),
+
+              SizedBox(height: 30.h),
+              const BuildDivider(),
+              SizedBox(height: 20.h),
+
+              // 3. الحقول (CustomTextField)
+              CustomTextField(label: "الاسم باللغة العربية", hint: "ادخل اسمك"),
+              SizedBox(height: 16.h),
+
+              CustomTextField(
                 label: "البريد الإلكتروني",
                 hint: "ادخل البريد الإلكتروني",
               ),
-              SizedBox(height: 20.h),
-              const CustomTextField(
+              SizedBox(height: 16.h),
+
+              CustomTextField(
                 label: "كلمة السر",
                 hint: "ادخل كلمة السر",
                 isPassword: true,
               ),
+              SizedBox(height: 16.h),
 
-              SizedBox(height: 40.h),
+              CustomTextField(
+                label: "تأكيد كلمة السر",
+                hint: "أعد إدخال كلمة السر",
+                isPassword: true,
+              ),
 
-              // زر تسجيل الدخول
-              CustomAuthButton(text: "تسجيل الدخول"),
+              SizedBox(height: 30.h),
+              CustomAuthButton(text: "إنشاء حساب"),
 
-              SizedBox(height: 40.h),
-              BuildDivider(),
-              SizedBox(height: 40.h),
+              SizedBox(height: 25.h),
 
-              // زر جوجل المعدل
-              CustomGoogleButton(text: ' Google تسجيل الدخول بـ '),
-
-              SizedBox(height: 40.h),
+              // 5. هل لديك حساب؟
               BuildLoginRedirect(
                 context: context,
-                text: 'إنشاء حساب جديد',
+                text: 'تسجيل الدخول',
                 onTap: () {
-                  GoRouter.of(context).push(AppRouter.kSignUpView);
+                  GoRouter.of(context).push(AppRouter.kLoginView);
                 },
               ),
+
+              SizedBox(height: 20.h),
             ],
           ),
         ),

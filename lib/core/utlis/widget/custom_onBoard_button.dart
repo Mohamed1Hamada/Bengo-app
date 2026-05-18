@@ -2,14 +2,14 @@ import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({
+class CustomOnBoardButton extends StatelessWidget {
+  const CustomOnBoardButton({
     super.key,
     required this.text,
     this.isPrimary = true,
     this.onPressed,
-    this.width, // خليته اختياري
-    this.height, // خليته اختياري
+    this.width,
+    this.height,
   });
 
   final String text;
@@ -21,9 +21,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? double.infinity, // لو مبعتوش ياخد العرض كامل
-      height:
-          height ?? 100.h, // الارتفاع الافتراضي 56 بكسل (مناسب جداً للموبايل)
+      width: width ?? double.infinity,
+      height: height ?? 100.h,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(

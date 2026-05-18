@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomGoogleButton extends StatelessWidget {
-  const CustomGoogleButton({super.key});
+  const CustomGoogleButton({super.key, required this.text});
+  final String text ;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CustomGoogleButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Google تسجيل الدخول بـ ",
+            text,
             style: Styles.textStyle16.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
