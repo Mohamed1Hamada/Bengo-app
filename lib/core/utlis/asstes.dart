@@ -9,4 +9,6 @@ class AsstesData {
   static const onBoardShadows = 'assets/images/Shadows.png';
   static const onBoardSideTable = 'assets/images/SideTable.png';
   static const googleIcon = 'assets/images/LoginForm.png';
+  static const homeHeaderIcon = 'assets/images/Image (Profile).png';
+  static const notificationIcon = 'assets/images/Button.png';
 }

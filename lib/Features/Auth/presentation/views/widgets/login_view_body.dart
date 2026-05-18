@@ -58,7 +58,12 @@ class LoginViewBody extends StatelessWidget {
               SizedBox(height: 40.h),
 
               // زر تسجيل الدخول
-              CustomAuthButton(text: "تسجيل الدخول", onPressed: () {  },),
+              CustomAuthButton(
+                text: "تسجيل الدخول",
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kHomeView);
+                },
+              ),
 
               SizedBox(height: 40.h),
               BuildDivider(),
