@@ -95,4 +95,15 @@ abstract class AppStyles {
     fontWeight: FontWeight.w400,
     height: 1.2,
   );
+  
+  static const LinearGradient kButton = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [
+      Color(0xFFD62828),
+      Color(0xFF8B2575),
+      Color(0xFF2A2575),
+    ],
+  );
+
 }
