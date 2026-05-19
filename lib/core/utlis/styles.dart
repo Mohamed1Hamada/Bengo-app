@@ -26,6 +26,11 @@ abstract class Styles {
     fontWeight: FontWeight.bold,
   );
 
+  static const textStyle22 = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.bold,
+  );
+
   static const textStyle24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w600,
@@ -71,7 +76,7 @@ abstract class AppStyles {
   );
 
   static TextStyle onBoardSubtitleStyle = const TextStyle(
-    fontSize: 22, // ← تم تصليحه
+    fontSize: 22,
     fontWeight: FontWeight.w800,
     color: Colors.white,
     height: 1.3,

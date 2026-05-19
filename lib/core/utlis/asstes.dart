@@ -11,4 +11,5 @@ class AsstesData {
   static const googleIcon = 'assets/images/LoginForm.png';
   static const homeHeaderIcon = 'assets/images/Image (Profile).png';
   static const notificationIcon = 'assets/images/Button.png';
+  static const bannerMan = 'assets/images/Rectangle.png';
 }
