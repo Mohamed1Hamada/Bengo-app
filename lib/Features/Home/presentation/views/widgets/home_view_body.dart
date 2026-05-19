@@ -1,3 +1,5 @@
+import 'package:bengo_app/Features/Home/presentation/views/widgets/categories_list_view.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/courses_header.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_home_header.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/home_search_field.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/promo_banner.dart';
@@ -18,11 +20,13 @@ class HomeViewBody extends StatelessWidget {
             const CustomHomeHeader(),
             SizedBox(height: 20.h),
             const HomeSearchField(),
-             SizedBox(height: 60.h),
-             const PromoBanner(),
-            // SizedBox(height: 30.h),
-
-            // هنا هنضيف جزء "الكورسات" والـ Categories في الخطوة الجاية
+            SizedBox(height: 60.h),
+            const PromoBanner(),
+            SizedBox(height: 60.h),
+            const CoursesHeader(),
+            SizedBox(height: 40.h),
+            const CategoriesListView(), // الجزء الجديد اللي ضفناه
+            SizedBox(height: 24.h),
           ],
         ),
       ),

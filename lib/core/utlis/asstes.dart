@@ -12,4 +12,6 @@ class AsstesData {
   static const homeHeaderIcon = 'assets/images/Image (Profile).png';
   static const notificationIcon = 'assets/images/Button.png';
   static const bannerMan = 'assets/images/Rectangle.png';
+  static const test1 = 'assets/images/image 19.png';
+  static const test2 = 'assets/images/Image Group.png';
 }
