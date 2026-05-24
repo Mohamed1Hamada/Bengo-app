@@ -20,6 +20,7 @@ class SearchTitleColumn extends StatelessWidget {
             height: 1.2,
           ),
         ),
+        const SizedBox(height: 8),
         Text(
           'إبحث عن الكورس المناسب لك',
           textAlign: TextAlign.right,
