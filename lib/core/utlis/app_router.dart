@@ -2,6 +2,7 @@ import 'package:bengo_app/Features/Auth/presentation/views/complete_profile_view
 import 'package:bengo_app/Features/Auth/presentation/views/login_view.dart';
 import 'package:bengo_app/Features/Auth/presentation/views/sign_up_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/home_view.dart';
+import 'package:bengo_app/Features/Home/presentation/views/search_view.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const String kSignUpView = '/signupview';
   static const String kCompleteProfileView = '/completeprofileview';
   static const String kHomeView = '/homeview';
+  static const String kSearchView = '/searchview';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -53,6 +55,13 @@ abstract class AppRouter {
         path: kHomeView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const HomeView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kSearchView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const SearchView(),
           state: state,
         ),
       ),

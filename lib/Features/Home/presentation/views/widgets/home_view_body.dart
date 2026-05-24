@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/Home/presentation/views/search_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/build_category_content.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/categories_list_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/courses_header.dart';
@@ -28,13 +29,22 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           children: [
             const CustomHomeHeader(),
             SizedBox(height: 15.h),
-            const HomeSearchField(),
+            HomeSearchField(
+              readOnly: true, // يمنع الكتابة هنا
+              onTap: () {
+               
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SearchView()),
+                );
+              },
+            ),
             SizedBox(height: 25.h),
             const PromoBanner(),
             SizedBox(height: 25.h),
             const CoursesHeader(),
             SizedBox(height: 10.h),
-            
+
             // 2. شريط الأقسام مع تمرير دالة التغيير
             CategoriesListView(
               onCategoryChanged: (index) {
@@ -48,7 +58,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
             // 3. عرض المحتوى بناءً على الاختيار
             BuildCategoryContent(selectedCategoryIndex: selectedCategoryIndex),
-            
+
             SizedBox(height: 30.h),
           ],
         ),

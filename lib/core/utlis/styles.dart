@@ -35,6 +35,10 @@ abstract class Styles {
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
+  static const textStyle28 = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.w600,
+  );
 
   static const textStyle30 = TextStyle(
     fontSize: 30,
@@ -53,6 +57,8 @@ abstract class Styles {
     fontSize: 48,
     fontWeight: FontWeight.w800,
   );
+
+  static Gradient? get kMainGradient => null;
 }
 
 abstract class AppStyles {
