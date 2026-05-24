@@ -1,5 +1,6 @@
 import 'package:bengo_app/core/utlis/asstes.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_salary_home_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -56,45 +57,7 @@ class CourseItem extends StatelessWidget {
         ),
 
         SizedBox(height: 12.h),
-
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            // التعديل هنا: نستخدم gradient بدل color
-            gradient: AppStyles.kButton,
-            borderRadius: BorderRadius.circular(50.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 4,
-                offset: const Offset(0, 2),
-              ),
-            ],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                "ج.م",
-                style: Styles.textStyle12.copyWith(
-                  // أصغر شوية بيدي شكل أحلى
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'Cairo',
-                ),
-              ),
-              SizedBox(width: 4.w), // مسافة بسيطة بين الرقم والعملة
-              Text(
-                "299",
-                style: Styles.textStyle12.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                  fontFamily: 'Cairo',
-                ),
-              ),
-            ],
-          ),
-        ),
+        const CustomSalaryHomeButton(price: '299'),
       ],
     );
   }
