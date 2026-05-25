@@ -11,22 +11,19 @@ class StaticTopUpHeader extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Color(0xffe32331),
-            Color(0xffb3248c),
-            Color(0xff1d2b73),
-          ],
+          colors: [Color(0xffe32331), Color(0xffb3248c), Color(0xff1d2b73)],
         ),
       ),
       child: Stack(
         children: [
-          const Positioned(
+          Positioned(
             left: 20,
             top: 20,
-            child: Icon(
-              Icons.close_rounded,
-              color: Colors.white,
-              size: 28,
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(Icons.close, color: Colors.white),
             ),
           ),
           Center(

@@ -39,7 +39,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 );
               },
             ),
-            SizedBox(height: 25.h),
+            SizedBox(height: 75.h),
             const PromoBanner(),
             SizedBox(height: 25.h),
             const CoursesHeader(),
@@ -54,7 +54,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               },
             ),
 
-            SizedBox(height: 20.h),
+            
 
             // 3. عرض المحتوى بناءً على الاختيار
             BuildCategoryContent(selectedCategoryIndex: selectedCategoryIndex),
