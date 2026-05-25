@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 class CustomSearchCard extends StatelessWidget {
   final CustomCourseCardModel model;
-
   const CustomSearchCard({super.key, required this.model});
 
   @override
@@ -18,99 +17,89 @@ class CustomSearchCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              // 1. قسم المعلومات (على اليسار)
               Expanded(
-                child: _CourseInfoSection(
-                  title: model.title,
-                  category: model.category,
-                  level: model.level,
-                  price: model.price,
-                ),
+                
+                child: _CourseInfoSection(model: model),
               ),
-              // 2. قسم الصورة (على اليمين)
-              const _CourseImage(
-                image: 'assets/images/Image (محاسبة مالية).png',
-              ), // استبدل 'image' بالمسار الصحيح للصورة
+           
+              _CourseImage(model: model),
             ],
           ),
-          // 3. بادج الحالة (فوق الجميع)
-          const Positioned(
-            top: 15,
-            left: 15,
-            child: _StatusBadge(label: 'مدفوع'),
-          ),
+          if (model.isPaid)
+            const Positioned(
+              top: 15,
+              left: 15,
+              child: _StatusBadge(label: 'مدفوع'),
+            ),
         ],
       ),
     );
   }
 
-  // تنسيق خلفية الكارت
   BoxDecoration _cardDecoration() {
     return BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(30),
+      border: Border.all(color: const Color(0xFFF0F0F0), width: 1),
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.05),
+          color: Colors.black.withOpacity(0.04),
           blurRadius: 10,
-          offset: const Offset(0, 5),
+          offset: const Offset(0, 4),
         ),
       ],
     );
   }
 }
 
-/// 1. ويدجت عرض معلومات الكورس (النصوص والزر)
 class _CourseInfoSection extends StatelessWidget {
-  final String title;
-  final String category;
-  final String level;
-  final String price;
-
-  const _CourseInfoSection({
-    required this.title,
-    required this.category,
-    required this.level,
-    required this.price,
-  });
+  
+  final CustomCourseCardModel model;
+  const _CourseInfoSection({required this.model});
 
   @override
   Widget build(BuildContext context) {
+  
+    final priceNumber = model.price.replaceAll(' ج.م', '').trim();
+
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 15, 15, 15),
+      padding: const EdgeInsetsDirectional.fromSTEB(10, 15, 15, 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 10), // مساحة للبادج العلوي
+          const SizedBox(height: 10),
           Text(
-            title,
+            model.title, 
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styles.textStyle18.copyWith(
               fontWeight: FontWeight.bold,
-              color: Color(0xFF272323),
+              color: const Color(0xFF272323),
             ),
           ),
+          const SizedBox(height: 4),
           Text(
-            '$category ▪ $level',
+            '${model.category} ▪ ${model.level}', 
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14.copyWith(
-              color: Color(0xFF542343),
+              color: const Color(0xFF542343),
               fontWeight: FontWeight.w600,
             ),
           ),
           const Spacer(),
-          const CustomSalarySearchButton(price: '299'),
+          CustomSalarySearchButton(price: priceNumber),
         ],
       ),
     );
   }
 }
 
-/// 2. ويدجت زر السعر المتدرج
-
-/// 3. ويدجت الصورة المقصوصة
 class _CourseImage extends StatelessWidget {
-  final String image;
-  const _CourseImage({required this.image});
+ 
+  final CustomCourseCardModel model;
+  const _CourseImage({required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -119,17 +108,24 @@ class _CourseImage extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.asset(
-          image,
+          model.image, 
           width: 100,
-          height: double.infinity,
+          height: 120,
           fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            return Container(
+              width: 100,
+              height: 120,
+              color: Colors.grey[200],
+              child: const Icon(Icons.broken_image, color: Colors.grey),
+            );
+          },
         ),
       ),
     );
   }
 }
 
-/// 4. ويدجت البادج (مدفوع / مجاني)
 class _StatusBadge extends StatelessWidget {
   final String label;
   const _StatusBadge({required this.label});
