@@ -1,8 +1,10 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/balance_card.dart';
+import 'package:bengo_app/core/utlis/app_router.dart';
 import 'package:bengo_app/core/utlis/asstes.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
+import 'package:bengo_app/core/utlis/widget/custom_balance_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomHomeHeader extends StatelessWidget {
   const CustomHomeHeader({super.key});
@@ -21,7 +23,9 @@ class CustomHomeHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              const BalanceCard(),
+               CustomBalanceCard(balance: '416', onTap: () { 
+                 GoRouter.of(context).push(AppRouter.kBalanceTopUpView);
+               },),
               SizedBox(width: 30.w),
 
               GestureDetector(
