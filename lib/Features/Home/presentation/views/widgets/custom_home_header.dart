@@ -24,7 +24,7 @@ class CustomHomeHeader extends StatelessWidget {
           Row(
             children: [
                CustomBalanceCard(balance: '416', onTap: () { 
-                 GoRouter.of(context).push(AppRouter.kBalanceTopUpView);
+                 GoRouter.of(context).push(AppRouter.kBalanceTopUpSuccess);
                },),
               SizedBox(width: 30.w),
 

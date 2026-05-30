@@ -29,7 +29,7 @@ class CustomSalaryHomeButton extends StatelessWidget {
               Text(
                 "ج.م",
                 style: Styles.textStyle12.copyWith(
-                  // أصغر شوية بيدي شكل أحلى
+                 
                   color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Cairo',

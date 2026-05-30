@@ -1,10 +1,9 @@
+import 'package:bengo_app/Features/Balance/presentation/views/widgets/home_background.dart';
 import 'package:bengo_app/Features/Balance/presentation/views/widgets/top_up_sheet.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bengo_app/features/home/presentation/views/widgets/home_view_body.dart';
-
-class BalanceTopUp1View extends StatelessWidget {
-  const BalanceTopUp1View({super.key});
+class BalanceTopUpSuccess extends StatelessWidget {
+  const BalanceTopUpSuccess({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class BalanceTopUp1View extends StatelessWidget {
       backgroundColor: const Color(0xfff7f7f7),
       body: Stack(
         children: [
-          const HomeViewBody(),
+          const HomeBackground(),
 
           Container(color: Colors.black.withOpacity(.52)),
 
@@ -21,7 +20,12 @@ class BalanceTopUp1View extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(24, 24, 24, 74),
-                child: TopUpSheet(),
+                child: TopUpSheet(
+                  isSuccess: true,
+                  chargeCodeText: 'dfdsf343fdfdsf',
+                  buttonText: 'تم الشحن بنجاح ✓',
+                  buttonOpacity: .48,
+                ),
               ),
             ),
           ),

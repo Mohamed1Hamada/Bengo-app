@@ -1,3 +1,4 @@
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 
 class StaticTopUpHeader extends StatelessWidget {
@@ -51,12 +52,11 @@ class StaticTopUpHeader extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Text(
+                Text(
                   'شحن الرصيد',
-                  style: TextStyle(
+                  style: Styles.textStyle22.copyWith(
                     color: Colors.white,
-                    fontSize: 27,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ],

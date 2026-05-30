@@ -1,7 +1,8 @@
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 
 class HomeBackground extends StatelessWidget {
-  const HomeBackground.HomeBackground({super.key});
+  const HomeBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +49,7 @@ class HomeBackground extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Text(
               'الرئيسية',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
-              ),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900),
             ),
           ),
         ),
@@ -59,16 +57,9 @@ class HomeBackground extends StatelessWidget {
         Container(
           height: 110,
           margin: const EdgeInsets.only(left: 26),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.horizontal(
-              right: Radius.circular(28),
-            ),
-            gradient: LinearGradient(
-              colors: [
-                Color(0xffd92735),
-                Color(0xff702071),
-              ],
-            ),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.horizontal(right: Radius.circular(28)),
+            gradient: AppStyles.kSalaryHomeButton,
           ),
         ),
         const Spacer(),
@@ -76,9 +67,7 @@ class HomeBackground extends StatelessWidget {
           height: 82,
           decoration: const BoxDecoration(
             color: Colors.white,
-            border: Border(
-              top: BorderSide(color: Color(0x11000000)),
-            ),
+            border: Border(top: BorderSide(color: Color(0x11000000))),
           ),
         ),
       ],
