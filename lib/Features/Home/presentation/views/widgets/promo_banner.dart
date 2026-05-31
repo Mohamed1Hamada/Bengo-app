@@ -19,14 +19,8 @@ class PromoBanner extends StatelessWidget {
             height: 300.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(28.r),
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Color(0xFFD62828), // أحمر
-                  Color(0xFF001F54), // أزرق غامق
-                ],
-              ),
+              gradient:
+                  AppStyles.kButtomNavBar, // استخدمت الـ Gradient من الـ Styles
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(28.r),
@@ -41,7 +35,11 @@ class PromoBanner extends StatelessWidget {
                   Positioned(
                     top: -210.h,
                     right: -110.w,
-                    child: _CircleBorder(size: 490.r, opacity: 0.33, borderWidth: 2.r),
+                    child: _CircleBorder(
+                      size: 490.r,
+                      opacity: 0.33,
+                      borderWidth: 2.r,
+                    ),
                   ),
                 ],
               ),
@@ -51,10 +49,10 @@ class PromoBanner extends StatelessWidget {
           // 2. صورة الشخص (فوق الدوائر)
           Positioned(
             right: 0,
-            bottom: 0, 
+            bottom: 0,
             child: Image.asset(
               AsstesData.bannerMan,
-              height: 400.h, 
+              height: 400.h,
               fit: BoxFit.contain,
             ),
           ),
@@ -110,7 +108,9 @@ class _GradientCircle extends StatelessWidget {
       height: size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.white.withOpacity(opacity), // استخدمت Opacity العادية عشان التوافق
+        color: Colors.white.withOpacity(
+          opacity,
+        ), // استخدمت Opacity العادية عشان التوافق
       ),
     );
   }

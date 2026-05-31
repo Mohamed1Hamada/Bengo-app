@@ -112,5 +112,10 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xFFD32F2F), Color(0xFF7B1FA2), Color(0xFF1565C0)],
   );
+  static const LinearGradient kButtomNavBar = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFFD62828), Color(0xFF001F54)],
+  );
   
 }
