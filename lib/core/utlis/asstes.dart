@@ -18,4 +18,9 @@ class AsstesData {
   static const test1 = 'assets/images/image 19.png';
   static const test2 = 'assets/images/Image Group.png';
   static const noCourse = 'assets/images/Container (1).png';
+  static const coursesIcon = 'assets/images/courses icon.png';
+  static const supportIcon = 'assets/images/support icon.png';
+  static const saveIcon = 'assets/images/save icon.png';
+  static const profileIcon = 'assets/images/profile icon.png';
+  static const homeIcon = 'assets/images/home icon.png';
 }
