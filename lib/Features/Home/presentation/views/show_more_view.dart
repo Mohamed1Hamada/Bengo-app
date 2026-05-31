@@ -8,12 +8,7 @@ class ShowMoreView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        top: false,
-        child: SizedBox.expand( 
-          child: ShowMoreViewBody(),
-        ),
-      ),
+      body: ShowMoreViewBody(),
     );
   }
 }

@@ -6,6 +6,9 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SearchViewBody());
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: SearchViewBody(),
+    );
   }
 }

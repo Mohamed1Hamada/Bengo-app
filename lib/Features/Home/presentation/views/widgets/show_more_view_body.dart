@@ -10,12 +10,11 @@ class ShowMoreViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const ShowMoreAppHeader(),
-        SizedBox(height: 70.h),
+        SizedBox(height: 90.h),
         const ShowMoreResultsHeader(),
-        SizedBox(height: 20.h),
+        SizedBox(height: 32.h),
         const Expanded(child: ShowMoreListView()),
       ],
     );
