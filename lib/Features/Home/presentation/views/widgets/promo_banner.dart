@@ -51,7 +51,7 @@ class PromoBanner extends StatelessWidget {
             right: 0,
             bottom: 0,
             child: Image.asset(
-              AsstesData.bannerMan,
+              AssetsData.bannerMan,
               height: 400.h,
               fit: BoxFit.contain,
             ),

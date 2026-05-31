@@ -30,7 +30,7 @@ class BuildLogoBadge extends StatelessWidget {
         ],
       ),
       child: Image.asset(
-        AsstesData.logo,
+        AssetsData.logo,
         width: 260.r,
         height: 260.r,
         fit: BoxFit.contain,

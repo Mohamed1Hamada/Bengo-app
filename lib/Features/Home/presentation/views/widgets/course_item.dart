@@ -19,7 +19,7 @@ class CourseItem extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.r),
               image: const DecorationImage(
-                image: AssetImage(AsstesData.test1),
+                image: AssetImage(AssetsData.test1),
                 fit: BoxFit.cover,
               ),
               boxShadow: [

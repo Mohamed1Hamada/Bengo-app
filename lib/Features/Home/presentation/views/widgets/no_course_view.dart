@@ -21,7 +21,7 @@ class NoCoursesView extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.r),
             ),
             child: Image.asset(
-              AsstesData.noCourse,
+              AssetsData.noCourse,
               width: 60.w,
               height: 60.h,
               fit: BoxFit.contain,

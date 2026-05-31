@@ -31,7 +31,7 @@ class CustomHomeHeader extends StatelessWidget {
               GestureDetector(
                 onTap: () {},
                 child: Image.asset(
-                  AsstesData.notificationIcon,
+                  AssetsData.notificationIcon,
                   color: Colors.black,
                   width: 60.w,
                   height: 60.h,
@@ -42,7 +42,7 @@ class CustomHomeHeader extends StatelessWidget {
 
               CircleAvatar(
                 radius: 60.r,
-                backgroundImage: const AssetImage(AsstesData.homeHeaderIcon),
+                backgroundImage: const AssetImage(AssetsData.homeHeaderIcon),
               ),
             ],
           ),

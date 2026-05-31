@@ -11,37 +11,37 @@ class OnBoardIllustration extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         _PositionedAsset(
-          asset: AsstesData.onBoardFloor,
+          asset: AssetsData.onBoardFloor,
           left: 42.w,
           top: 266.h,
           width: 430.w,
         ),
         _PositionedAsset(
-          asset: AsstesData.onBoardShadows,
+          asset: AssetsData.onBoardShadows,
           left: 112.w,
           top: 338.h,
           width: 265.w,
         ),
         _PositionedAsset(
-          asset: AsstesData.onBoardSideTable,
+          asset: AssetsData.onBoardSideTable,
           left: 88.w,
           top: 278.h,
           width: 74.w,
         ),
         _PositionedAsset(
-          asset: AsstesData.onBoardCharacter,
+          asset: AssetsData.onBoardCharacter,
           left: 178.w,
           top: 174.h,
           width: 185.w,
         ),
         _PositionedAsset(
-          asset: AsstesData.onBoardScreens,
+          asset: AssetsData.onBoardScreens,
           left: 314.w,
           top: 58.h,
           width: 190.w,
         ),
         _PositionedAsset(
-          asset: AsstesData.onBoardIcon,
+          asset: AssetsData.onBoardIcon,
           left: 112.w,
           top: 102.h,
           width: 54.w,

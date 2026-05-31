@@ -53,11 +53,11 @@ class _MainLayoutViewState extends State<MainLayoutView> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(index: 0, assetPath: AsstesData.profileIcon, label: 'الحساب'),
-              _buildNavItem(index: 1, assetPath: AsstesData.saveIcon, label: 'المحفوظات'),
-              _buildNavItem(index: 2, assetPath: AsstesData.supportIcon, label: 'الدعم'),
-              _buildNavItem(index: 3, assetPath: AsstesData.coursesIcon, label: 'كورساتي'),
-              _buildNavItem(index: 4, assetPath: AsstesData.homeIcon, label: 'الرئيسية'),
+              _buildNavItem(index: 0, assetPath: AssetsData.profileIcon, label: 'الحساب'),
+              _buildNavItem(index: 1, assetPath: AssetsData.saveIcon, label: 'المحفوظات'),
+              _buildNavItem(index: 2, assetPath: AssetsData.supportIcon, label: 'الدعم'),
+              _buildNavItem(index: 3, assetPath: AssetsData.coursesIcon, label: 'كورساتي'),
+              _buildNavItem(index: 4, assetPath: AssetsData.homeIcon, label: 'الرئيسية'),
             ],
           ),
         ),

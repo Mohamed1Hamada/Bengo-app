@@ -11,7 +11,7 @@ class CustomSalarySearchButton extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        gradient: AppStyles.kSalarySearchButton,
+        gradient: AppStyles.kCustomButton,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(

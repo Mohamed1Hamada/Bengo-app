@@ -29,7 +29,7 @@ class CustomGoogleButton extends StatelessWidget {
             ),
           ),
           SizedBox(width: 8.w),
-          Image.asset(AsstesData.googleIcon, width: 30.w, height: 30.h),
+          Image.asset(AssetsData.googleIcon, width: 30.w, height: 30.h),
         ],
       ),
     );

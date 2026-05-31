@@ -1,4 +1,4 @@
-class AsstesData {
+class AssetsData {
   static const logo =
       'assets/images/f110275c9c8020e186323473da29a5997a590de6.png';
 
@@ -23,4 +23,9 @@ class AsstesData {
   static const saveIcon = 'assets/images/save icon.png';
   static const profileIcon = 'assets/images/profile icon.png';
   static const homeIcon = 'assets/images/home icon.png';
+  static const supportAgentIcon = 'assets/images/support Agent icon.png';
+  static const phoneIcon = 'assets/images/phone icon.png';
+  static const mailIcon = 'assets/images/mail icon.png';
+  static const timerIcon = 'assets/images/timer icon.png';
+  static const messageIcon = 'assets/images/message icon.png';
 }
