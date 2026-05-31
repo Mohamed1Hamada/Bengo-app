@@ -107,7 +107,7 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xFFD62828), Color(0xFF8B2575), Color(0xFF2A2575)],
   );
-  static const LinearGradient kCustomButton = LinearGradient(
+  static const LinearGradient kCustomGradient = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [Color(0xFFD32F2F), Color(0xFF7B1FA2), Color(0xFF1565C0)],
@@ -117,5 +117,4 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xFFD62828), Color(0xFF001F54)],
   );
-  
 }

@@ -22,7 +22,7 @@ class WorkingHoursPanel extends StatelessWidget {
             height: 42,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              gradient: AppStyles.kCustomButton,
+              gradient: AppStyles.kCustomGradient,
             ),
             child: Image(
               image: AssetImage(AssetsData.timerIcon),

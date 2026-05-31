@@ -28,4 +28,9 @@ class AssetsData {
   static const mailIcon = 'assets/images/mail icon.png';
   static const timerIcon = 'assets/images/timer icon.png';
   static const messageIcon = 'assets/images/message icon.png';
+  static const starIcon = 'assets/images/star icon.png';
+  static const signOutIcon = 'assets/images/sign out icon.png';
+  static const shareAppIcon = 'assets/images/share app icon.png';
+  static const editDataIcon = 'assets/images/edit data icon.png';
+  static const deleteAccountIcon = 'assets/images/delete account icon.png';
 }

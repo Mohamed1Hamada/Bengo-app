@@ -21,7 +21,7 @@ class HeroPanel extends StatelessWidget {
             height: 70,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              gradient: AppStyles.kCustomButton,
+              gradient: AppStyles.kCustomGradient,
             ),
             child: Image(
               image: AssetImage(AssetsData.supportAgentIcon),

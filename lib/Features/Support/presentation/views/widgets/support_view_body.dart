@@ -42,7 +42,7 @@ class SupportViewBody extends StatelessWidget {
                     ContactMethodTile(
                       title: 'البريد الإلكتروني',
                       subtitle: 'support@bengo.app',
-                      gradient: AppStyles.kCustomButton,
+                      gradient: AppStyles.kCustomGradient,
                       imagePath: AssetsData.mailIcon,
                     ),
                     const SizedBox(height: 20),
