@@ -3,9 +3,14 @@ import 'package:bengo_app/Features/Auth/presentation/views/login_view.dart';
 import 'package:bengo_app/Features/Auth/presentation/views/sign_up_view.dart';
 import 'package:bengo_app/Features/Balance/presentation/views/balance_top_up_success.dart';
 import 'package:bengo_app/Features/Balance/presentation/views/balance_top_up_view.dart';
+import 'package:bengo_app/Features/Courses/presentation/views/courses_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/home_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/search_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/show_more_view.dart';
+import 'package:bengo_app/Features/Profile/presentation/views/profile_view.dart';
+import 'package:bengo_app/Features/Saved/presentation/views/saved_view.dart';
+import 'package:bengo_app/Features/Support/presentation/views/support_view.dart';
+import 'package:bengo_app/Features/layout/presentation/views/main_layout_view.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +28,11 @@ abstract class AppRouter {
   static const String kBalanceTopUpView = '/balance/top-up';
   static const String kBalanceTopUpSuccess = '/balance/top-up/success';
   static const String kShowMoreView = '/show-more';
+  static const String kProfileView = '/profileView';
+  static const String kSupportView = '/supportView';
+  static const String kSavedView = '/savedView';
+  static const String kCoursesView = '/coursesView';
+  static const String kMainLayoutView = '/main-layout';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -59,17 +69,13 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kHomeView,
-        pageBuilder: (context, state) => _buildCustomTransitionPage(
-          child: const HomeView(),
-          state: state,
-        ),
+        pageBuilder: (context, state) =>
+            _buildCustomTransitionPage(child: const HomeView(), state: state),
       ),
       GoRoute(
         path: kSearchView,
-        pageBuilder: (context, state) => _buildCustomTransitionPage(
-          child: const SearchView(),
-          state: state,
-        ),
+        pageBuilder: (context, state) =>
+            _buildCustomTransitionPage(child: const SearchView(), state: state),
       ),
       GoRoute(
         path: kBalanceTopUpView,
@@ -89,6 +95,39 @@ abstract class AppRouter {
         path: kShowMoreView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const ShowMoreView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kProfileView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const ProfileView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kSupportView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const SupportView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kSavedView,
+        pageBuilder: (context, state) =>
+            _buildCustomTransitionPage(child: const SavedView(), state: state),
+      ),
+      GoRoute(
+        path: kCoursesView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const CoursesView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kMainLayoutView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const MainLayoutView(),
           state: state,
         ),
       ),

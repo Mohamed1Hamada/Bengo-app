@@ -61,7 +61,7 @@ class LoginViewBody extends StatelessWidget {
               CustomAuthButton(
                 text: "تسجيل الدخول",
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.kHomeView);
+                  GoRouter.of(context).push(AppRouter.kMainLayoutView);
                 },
               ),
 
