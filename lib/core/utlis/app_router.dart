@@ -7,7 +7,7 @@ import 'package:bengo_app/Features/Courses/presentation/views/courses_view.dart'
 import 'package:bengo_app/Features/Home/presentation/views/home_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/search_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/show_more_view.dart';
-import 'package:bengo_app/Features/Profile/presentation/views/profile_view.dart';
+import 'package:bengo_app/Features/MyProfile/presentation/views/my_profile_view.dart';
 import 'package:bengo_app/Features/Saved/presentation/views/saved_view.dart';
 import 'package:bengo_app/Features/Support/presentation/views/support_view.dart';
 import 'package:bengo_app/Features/layout/presentation/views/main_layout_view.dart';
@@ -28,7 +28,7 @@ abstract class AppRouter {
   static const String kBalanceTopUpView = '/balance/top-up';
   static const String kBalanceTopUpSuccess = '/balance/top-up/success';
   static const String kShowMoreView = '/show-more';
-  static const String kProfileView = '/profileView';
+  static const String kMyProfileView = '/my-profile';
   static const String kSupportView = '/supportView';
   static const String kSavedView = '/savedView';
   static const String kCoursesView = '/coursesView';
@@ -99,9 +99,9 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
-        path: kProfileView,
+        path: kMyProfileView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
-          child: const ProfileView(),
+          child: const MyProfileView(),
           state: state,
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:bengo_app/Features/Home/presentation/views/widgets/home_view_body.dart';
-import 'package:bengo_app/Features/Profile/presentation/views/profile_view.dart';
+import 'package:bengo_app/Features/MyProfile/presentation/views/my_profile_view.dart';
 import 'package:bengo_app/Features/Saved/presentation/views/saved_view.dart';
 import 'package:bengo_app/Features/Courses/presentation/views/courses_view.dart';
 import 'package:bengo_app/Features/Support/presentation/views/widgets/support_view_body.dart';
@@ -19,7 +19,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
 
   // تم الاحتفاظ بالقائمة كما هي مع ترتيب الـ Features الخاص بك
   final List<Widget> _pages = [
-    const ProfileView(),
+    const MyProfileView(),
     const SavedView(),
     const SupportViewBody(),
     const CoursesView(),
