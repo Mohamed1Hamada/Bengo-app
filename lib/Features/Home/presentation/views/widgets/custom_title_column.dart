@@ -1,8 +1,10 @@
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 
-class SearchTitleColumn extends StatelessWidget {
-  const SearchTitleColumn({super.key});
+class CustomTitleColumn extends StatelessWidget {
+  const CustomTitleColumn({super.key, required this.title, required this.subtitle});
+  final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class SearchTitleColumn extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          'البحث',
+          title,
           textAlign: TextAlign.right,
           style: Styles.textStyle30.copyWith(
             color: Colors.white,
@@ -22,7 +24,7 @@ class SearchTitleColumn extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          'إبحث عن الكورس المناسب لك',
+          subtitle,
           textAlign: TextAlign.right,
           style: Styles.textStyle14.copyWith(
             color: Colors.white.withOpacity(0.9),

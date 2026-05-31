@@ -8,7 +8,7 @@ class SearchResultsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 22), // استخدمت .w للتوافق مع ScreenUtil
+      padding: EdgeInsets.symmetric(horizontal: 24.w), 
       child: Align(
         alignment: Alignment.centerRight,
         child: Column(
@@ -38,8 +38,7 @@ class SearchResultsHeader extends StatelessWidget {
                   TextSpan(
                     text: '6', // الرقم المراد تلوينه
                     style: Styles.textStyle18.copyWith(
-                      color: const Color(0xFF2B4EA2), // اللون الأحمر من الفيجما
-                      fontWeight: FontWeight.w500,
+                      color: const Color(0xFF2B4EA2),
                       fontFamily: 'Cairo',
                     ),
                   ),

@@ -5,24 +5,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'custom_title_column.dart';
 
-class SearchAppBarRow extends StatelessWidget {
-  const SearchAppBarRow({super.key});
+class ShowMoreAppBarRow extends StatelessWidget {
+  const ShowMoreAppBarRow({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // 1. زر الفلتر (يسار)
-        HeaderCircleButton(icon: FontAwesomeIcons.sliders, onTap: () {}),
-
-        const Spacer(),
-
-        // 2. العنوان والوصف
-        const CustomTitleColumn(
-          title: 'البحث',
-          subtitle: 'إبحث عن الكورس المناسب لك',
-        ),
+       
+        const CustomTitleColumn(title: 'الكل', subtitle: ' كورس متاح 8'),
 
         SizedBox(width: 16.w),
 

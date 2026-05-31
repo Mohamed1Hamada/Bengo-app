@@ -5,30 +5,35 @@ import 'package:flutter/material.dart';
 
 class CustomSearchCard extends StatelessWidget {
   final CustomCourseCardModel model;
-  const CustomSearchCard({super.key, required this.model});
+  final bool showPaidBadge;  // ← جديد
+
+  const CustomSearchCard({
+    super.key,
+    required this.model,
+    this.showPaidBadge = true,  // ← افتراضي true عشان صفحة البحث
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 140,
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.all(10),
       decoration: _cardDecoration(),
       child: Stack(
         children: [
           Row(
             children: [
               Expanded(
-                
                 child: _CourseInfoSection(model: model),
               ),
-           
+              const SizedBox(width: 10),
               _CourseImage(model: model),
             ],
           ),
-          if (model.isPaid)
+          if (showPaidBadge && model.isPaid)  // ← الشرط الجديد
             const Positioned(
-              top: 15,
-              left: 15,
+              top: 8,
+              left: 8,
               child: _StatusBadge(label: 'مدفوع'),
             ),
         ],
@@ -39,7 +44,7 @@ class CustomSearchCard extends StatelessWidget {
   BoxDecoration _cardDecoration() {
     return BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(16),
       border: Border.all(color: const Color(0xFFF0F0F0), width: 1),
       boxShadow: [
         BoxShadow(
@@ -53,74 +58,64 @@ class CustomSearchCard extends StatelessWidget {
 }
 
 class _CourseInfoSection extends StatelessWidget {
-  
   final CustomCourseCardModel model;
   const _CourseInfoSection({required this.model});
 
   @override
   Widget build(BuildContext context) {
-  
     final priceNumber = model.price.replaceAll(' ج.م', '').trim();
 
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(10, 15, 15, 15),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 10),
-          Text(
-            model.title, 
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Styles.textStyle18.copyWith(
-              fontWeight: FontWeight.bold,
-              color: const Color(0xFF272323),
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Text(
+          model.title,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: Styles.textStyle18.copyWith(
+            fontWeight: FontWeight.bold,
+            color: const Color(0xFF272323),
           ),
-          const SizedBox(height: 4),
-          Text(
-            '${model.category} ▪ ${model.level}', 
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: Styles.textStyle14.copyWith(
-              color: const Color(0xFF542343),
-              fontWeight: FontWeight.w600,
-            ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          '${model.category} ▪ ${model.level}',
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: Styles.textStyle14.copyWith(
+            color: const Color(0xFF542343),
+            fontWeight: FontWeight.w600,
           ),
-          const Spacer(),
-          CustomSalarySearchButton(price: priceNumber),
-        ],
-      ),
+        ),
+        const SizedBox(height: 10),
+        CustomSalarySearchButton(price: priceNumber),
+      ],
     );
   }
 }
 
 class _CourseImage extends StatelessWidget {
- 
   final CustomCourseCardModel model;
   const _CourseImage({required this.model});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Image.asset(
-          model.image, 
-          width: 100,
-          height: 120,
-          fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return Container(
-              width: 100,
-              height: 120,
-              color: Colors.grey[200],
-              child: const Icon(Icons.broken_image, color: Colors.grey),
-            );
-          },
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.asset(
+        model.image,
+        width: 105,    // ← زدت الحجم شوية (كان 90)
+        height: 120,   // ← زدت الحجم شوية (كان 90)
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) {
+          return Container(
+            width: 105,
+            height: 120,
+            color: Colors.grey[200],
+            child: const Icon(Icons.broken_image, color: Colors.grey),
+          );
+        },
       ),
     );
   }

@@ -1,11 +1,11 @@
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_app_bar_row.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_stats_row.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'search_app_bar_row.dart';
-import 'search_text_field.dart';
 
-class SearchAppHeader extends StatelessWidget {
-  const SearchAppHeader({super.key});
+class ShowMoreAppHeader extends StatelessWidget {
+  const ShowMoreAppHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SearchAppHeader extends StatelessWidget {
           ),
           child: Padding(
             padding: EdgeInsets.only(top: 60.h, left: 24.w, right: 24.w),
-            child: const SearchAppBarRow(), // الصف اللي فيه الزراير والعنوان
+            child: const ShowMoreAppBarRow(), 
           ),
         ),
 
@@ -39,7 +39,7 @@ class SearchAppHeader extends StatelessWidget {
           bottom: -55.h, 
           left: 24.w,
           right: 24.w,
-          child: const SearchTextField(), // حقل البحث الأبيض
+          child: const ShowMoreStatsRow(), // حقل البحث الأبيض
         ),
       ],
     );

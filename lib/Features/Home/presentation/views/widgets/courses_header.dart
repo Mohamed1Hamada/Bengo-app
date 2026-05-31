@@ -1,5 +1,7 @@
+import 'package:bengo_app/core/utlis/app_router.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CoursesHeader extends StatelessWidget {
   const CoursesHeader({super.key});
@@ -11,7 +13,7 @@ class CoursesHeader extends StatelessWidget {
         // عرض المزيد (على الشمال)
         GestureDetector(
           onTap: () {
-            // التنقل لصفحة كل الكورسات
+            GoRouter.of(context).push(AppRouter.kShowMoreView);
           },
           child: Text(
             "عرض المزيد",

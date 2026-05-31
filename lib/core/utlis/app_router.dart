@@ -5,6 +5,7 @@ import 'package:bengo_app/Features/Balance/presentation/views/balance_top_up_suc
 import 'package:bengo_app/Features/Balance/presentation/views/balance_top_up_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/home_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/search_view.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_view_body.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ abstract class AppRouter {
   static const String kSearchView = '/searchview';
   static const String kBalanceTopUpView = '/balance/top-up';
   static const String kBalanceTopUpSuccess = '/balance/top-up/success';
+  static const String kShowMoreView = '/show-more';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -80,6 +82,13 @@ abstract class AppRouter {
         path: kBalanceTopUpSuccess,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const BalanceTopUpSuccess(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kShowMoreView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const ShowMoreViewBody(),
           state: state,
         ),
       ),

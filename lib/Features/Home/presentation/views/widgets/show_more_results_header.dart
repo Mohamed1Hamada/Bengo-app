@@ -1,0 +1,25 @@
+import 'package:bengo_app/core/utlis/styles.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class ShowMoreResultsHeader extends StatelessWidget {
+  const ShowMoreResultsHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Text(
+          'جميع الكورسات',
+          style: Styles.textStyle20.copyWith(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Cairo',
+            color: const Color(0xFF272323),
+          ),
+        ),
+      ),
+    );
+  }
+}
