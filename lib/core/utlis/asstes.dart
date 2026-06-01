@@ -36,4 +36,10 @@ class AssetsData {
   static const backIcon = 'assets/images/back icon.png';
   static const personProfile = 'assets/images/person profile.png';
   static const balanceInfoIcon = 'assets/images/balance info icon.png';
+  static const cameraIcon = 'assets/images/camera icon.png';
+  static const graduationIconSm = 'assets/images/graduation icon sm.png';
+  static const mailIconSm = 'assets/images/mail icon sm.png';
+  static const nameIconSm = 'assets/images/name icon sm.png';
+  static const sectionIconSm = 'assets/images/section icon sm.png';
+  static const universityIconSm = 'assets/images/university icon sm.png';
 }

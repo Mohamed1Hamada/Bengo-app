@@ -33,7 +33,7 @@ class MyProfileViewBody extends StatelessWidget {
           const SizedBox(height: 70),
 
           // Menu Items
-           ProfileMenuSection(items: ProfileStaticData.menuItems),
+           ProfileMenuSection(items: ProfileStaticData.getMenuItems(context)),
           const SizedBox(height: 20),
 
           // App Version

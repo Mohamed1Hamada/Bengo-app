@@ -26,7 +26,7 @@ class ProfileMenuItem extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: item.onTap?.call,
           borderRadius: BorderRadius.circular(16),
           child: Padding(
             padding: const EdgeInsets.all(14),
@@ -34,7 +34,7 @@ class ProfileMenuItem extends StatelessWidget {
               children: [
                 // Back Arrow Image
                 Image.asset(
-                  AssetsData.backIcon, // ضيف ده في AssetsData
+                  AssetsData.backIcon,
                   width: 22,
                   height: 22,
                   color: Colors.grey,
