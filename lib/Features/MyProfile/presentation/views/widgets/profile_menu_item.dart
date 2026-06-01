@@ -35,8 +35,8 @@ class ProfileMenuItem extends StatelessWidget {
                 // Back Arrow Image
                 Image.asset(
                   AssetsData.backIcon, // ضيف ده في AssetsData
-                  width: 16,
-                  height: 16,
+                  width: 22,
+                  height: 22,
                   color: Colors.grey,
                 ),
                 const Spacer(),
@@ -44,7 +44,7 @@ class ProfileMenuItem extends StatelessWidget {
                 // Title
                 Text(
                   item.title,
-                  style: Styles.textStyle14.copyWith(
+                  style: Styles.textStyle16.copyWith(
                     fontWeight: FontWeight.w600,
                     color: item.textColor ?? Colors.black87,
                   ),
@@ -53,17 +53,17 @@ class ProfileMenuItem extends StatelessWidget {
 
                 // Icon Container with Image
                 Container(
-                  width: 40,
-                  height: 40,
+                  width: 44,
+                  height: 44,
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: item.iconBgColor,
+                    gradient: item.gradient,
+                    color: item.gradient == null
+                        ? (item.color ?? Colors.blue)
+                        : null,
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: Image.asset(
-                    item.iconPath,
-                    color: Colors.white,
-                  ),
+                  child: Image.asset(item.iconPath),
                 ),
               ],
             ),

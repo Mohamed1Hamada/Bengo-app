@@ -23,7 +23,7 @@ class BalanceInfo extends StatelessWidget {
               ),
             ),
             SizedBox(width: 6),
-            Image.asset(AssetsData.profileIcon),
+            Image.asset(AssetsData.balanceInfoIcon, width: 16, height: 16, color: Color(0xff8B2575)),
           ],
         ),
         const SizedBox(height: 4),

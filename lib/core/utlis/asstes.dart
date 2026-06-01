@@ -35,4 +35,5 @@ class AssetsData {
   static const deleteAccountIcon = 'assets/images/delete account icon.png';
   static const backIcon = 'assets/images/back icon.png';
   static const personProfile = 'assets/images/person profile.png';
+  static const balanceInfoIcon = 'assets/images/balance info icon.png';
 }

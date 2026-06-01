@@ -16,11 +16,12 @@ class ProfileHeader extends StatelessWidget {
       decoration: const BoxDecoration(gradient: AppStyles.kCustomGradient),
       child: Column(
         children: [
-          // Back Button (Right in RTL)
           Align(
             alignment: Alignment.centerRight,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: Icon(Icons.arrow_forward_rounded, color: Colors.white),
             ),
           ),
