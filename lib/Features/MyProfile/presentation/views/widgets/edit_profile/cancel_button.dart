@@ -1,3 +1,4 @@
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 /// cancel_button.dart
 ///
@@ -14,16 +15,15 @@ class CancelButton extends StatelessWidget {
         height: 52,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(26),
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(color: const Color(0xFFE2E8F0)),
         ),
-        child: const Center(
+        child:  Center(
           child: Text(
             'إلغاء',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF334155),
+            style: Styles.textStyle16.copyWith(
+              color: const Color(0xFF272323),
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),

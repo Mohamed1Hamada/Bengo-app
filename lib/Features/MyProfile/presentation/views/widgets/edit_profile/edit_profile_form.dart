@@ -70,7 +70,7 @@ class EditProfileForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 24 ),
       child: Column(
         children: [
           ..._textFields.map((field) => Padding(
@@ -81,7 +81,7 @@ class EditProfileForm extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8),
             child: Divider(
               color: Color(0xFFE2E8F0),
-              thickness: 1,
+              thickness: 2,
             ),
           ),
           ..._dropdownFields.asMap().entries.map((entry) {

@@ -1,9 +1,7 @@
 import 'package:bengo_app/Features/MyProfile/data/model/edit_profile_field_model.dart';
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 
-/// custom_text_field.dart
-///
-/// مكوّن إدخال نصي مخصّص مع أيقونة على اليمين (RTL)
 class CustomTextField extends StatelessWidget {
   final EditProfileFieldModel field;
 
@@ -21,41 +19,38 @@ class CustomTextField extends StatelessWidget {
             children: [
               Image.asset(
                 field.pathImage,
-                width: 16,
-                height: 16,
+                width: 20,
+                height: 20,
               ),
               const SizedBox(width: 6),
               Text(
                 field.label,
-                style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF334155),
+                style: Styles.textStyle16.copyWith(
+                  color: const Color(0xFF272323),
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
           ),
           const SizedBox(height: 6),
           Container(
-            height: 48,
+            height: 52,
             decoration: BoxDecoration(
-              color: const Color(0xFFF1F5F9),
+              color: const Color(0xFFF3F3F5),
               borderRadius: BorderRadius.circular(16),
             ),
             child: TextField(
               keyboardType: field.type,
-              // textAlign: TextAlign.right,
-              // textDirection: TextDirection.rtl,
-              style: const TextStyle(
-                fontSize: 14,
+          
+              style: Styles.textStyle14.copyWith(
+                color: const Color(0xFF272323),
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF1E293B),
               ),
               decoration: InputDecoration(
                 hintText: field.placeholder,
-                hintStyle: const TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF94A3B8),
+                hintStyle: Styles.textStyle14.copyWith(
+                  color: const Color(0xFF717182),
+                  fontWeight: FontWeight.w500,
                 ),
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                 border: InputBorder.none,

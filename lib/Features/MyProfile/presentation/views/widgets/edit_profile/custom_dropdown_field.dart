@@ -1,9 +1,6 @@
 import 'package:bengo_app/Features/MyProfile/data/model/dropdown_field_model.dart';
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
-
-/// custom_dropdown_field.dart
-///
-/// حقل قائمة منسدلة مخصص مع أيقونة
 class CustomDropdownField extends StatelessWidget {
   final DropdownFieldModel field;
   final String pathImage;
@@ -24,18 +21,13 @@ class CustomDropdownField extends StatelessWidget {
         children: [
           Row(
             children: [
-              Image.asset(
-                pathImage,
-                width: 16,
-                height: 16,
-              ),
+              Image.asset(pathImage, width: 20, height: 20),
               const SizedBox(width: 6),
               Text(
                 field.label,
-                style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF334155),
+                style: Styles.textStyle16.copyWith(
+                  color: const Color(0xFF272323),
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ],
@@ -54,9 +46,9 @@ class CustomDropdownField extends StatelessWidget {
                 value: field.value.isEmpty ? null : field.value,
                 hint: Text(
                   field.placeholder,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF94A3B8),
+                  style: Styles.textStyle14.copyWith(
+                    color: const Color(0xFF94A3B8),
+                    fontWeight: FontWeight.w500,
                   ),
                   textAlign: TextAlign.right,
                 ),
@@ -64,10 +56,9 @@ class CustomDropdownField extends StatelessWidget {
                   Icons.keyboard_arrow_down,
                   color: Color(0xFF94A3B8),
                 ),
-                style: const TextStyle(
-                  fontSize: 14,
+                style: Styles.textStyle14.copyWith(
+                  color: const Color(0xFF272323),
                   fontWeight: FontWeight.w500,
-                  color: Color(0xFF1E293B),
                 ),
                 dropdownColor: Colors.white,
                 borderRadius: BorderRadius.circular(16),

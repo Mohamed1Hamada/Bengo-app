@@ -1,7 +1,7 @@
+import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
-/// save_changes_button.dart
-///
-/// زر "حفظ التعديلات" بتدرج لوني
+
+
 class SaveChangesButton extends StatelessWidget {
   final VoidCallback? onPressed;
   const SaveChangesButton({super.key, this.onPressed});
@@ -13,29 +13,22 @@ class SaveChangesButton extends StatelessWidget {
         width: double.infinity,
         height: 56,
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [
-              Color(0xFF5B21B6),
-              Color(0xFF7C3AED),
-              Color(0xFFC026D3),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(28),
+          gradient: AppStyles.kSalaryHomeButton,
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF7C3AED).withOpacity(0.3),
+              color: Color(0xFF000000).withOpacity(0.2),
               blurRadius: 16,
               offset: const Offset(0, 6),
             ),
           ],
         ),
-        child: const Center(
+        child: Center(
           child: Text(
             'حفظ التعديلات',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
+            style: Styles.textStyle16.copyWith(
               color: Colors.white,
+              fontWeight: FontWeight.w700,
             ),
           ),
         ),

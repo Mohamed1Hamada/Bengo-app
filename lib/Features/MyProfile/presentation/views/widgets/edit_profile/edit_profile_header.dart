@@ -14,12 +14,10 @@ class EditProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // زيادة الـ padding السفلي لتكبير الـ Container كما طلبت
-      padding: const EdgeInsets.fromLTRB(16, 36, 16, 140),
+      padding: const EdgeInsets.fromLTRB(16, 46, 16, 140),
       decoration: BoxDecoration(gradient: AppStyles.kSalaryHomeButton),
       child: Row(
         children: [
-          // العنوان في المنتصف (يأخذ مساحة مرنة)
           Expanded(
             child: Text(
               title,
@@ -30,8 +28,6 @@ class EditProfileHeader extends StatelessWidget {
               ),
             ),
           ),
-
-          // زر الرجوع في الجانب الآخر
           GestureDetector(
             onTap: onBack,
             child: const Icon(
