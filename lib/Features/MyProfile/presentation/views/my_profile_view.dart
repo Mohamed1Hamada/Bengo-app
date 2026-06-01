@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/MyProfile/presentation/views/widgets/my_profile_view_body.dart';
 import 'package:flutter/material.dart';
 
 class MyProfileView extends StatelessWidget {
@@ -5,6 +6,12 @@ class MyProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Color(0xFFF8F9FA),
+      body: SafeArea(
+        bottom: false,
+        child: MyProfileViewBody(),
+      ),
+    );
   }
 }

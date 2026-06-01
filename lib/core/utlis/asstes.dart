@@ -33,4 +33,6 @@ class AssetsData {
   static const shareAppIcon = 'assets/images/share app icon.png';
   static const editDataIcon = 'assets/images/edit data icon.png';
   static const deleteAccountIcon = 'assets/images/delete account icon.png';
+  static const backIcon = 'assets/images/back icon.png';
+  static const personProfile = 'assets/images/person profile.png';
 }
