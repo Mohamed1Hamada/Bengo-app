@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 /// حقل قائمة منسدلة مخصص مع أيقونة
 class CustomDropdownField extends StatelessWidget {
   final DropdownFieldModel field;
-  final IconData icon;
+  final String pathImage;
 
   const CustomDropdownField({
     super.key,
     required this.field,
-    required this.icon,
+    required this.pathImage,
   });
 
   @override
@@ -24,10 +24,10 @@ class CustomDropdownField extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                icon,
-                size: 16,
-                color: const Color(0xFF7C3AED),
+              Image.asset(
+                pathImage,
+                width: 16,
+                height: 16,
               ),
               const SizedBox(width: 6),
               Text(

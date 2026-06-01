@@ -6,14 +6,14 @@ class EditProfileFieldModel {
   final String id;
   final String label;
   final String placeholder;
-  final IconData icon;
+  final String pathImage;
   final TextInputType type;
   final String value;
   const EditProfileFieldModel({
     required this.id,
     required this.label,
     required this.placeholder,
-    required this.icon,
+    required this.pathImage,
     required this.type,
     required this.value,
   });

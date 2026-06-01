@@ -1,6 +1,7 @@
 import 'package:bengo_app/Features/MyProfile/data/edit_profile_static_data.dart';
 import 'package:bengo_app/Features/MyProfile/data/model/dropdown_field_model.dart';
 import 'package:bengo_app/Features/MyProfile/data/model/edit_profile_field_model.dart';
+import 'package:bengo_app/core/utlis/asstes.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_text_field.dart';
@@ -10,12 +11,12 @@ import 'custom_dropdown_field.dart';
 /// نموذج تعديل الملف الشخصي (يجمع الحقول النصية + القوائم)
 class EditProfileForm extends StatelessWidget {
   const EditProfileForm({super.key});
-  List<EditProfileFieldModel> get _textFields => const [
+  List<EditProfileFieldModel> get _textFields =>  [
         EditProfileFieldModel(
           id: 'fullName',
           label: 'الاسم الكامل',
           placeholder: 'أدخل اسمك الكامل',
-          icon: Icons.person_outline,
+          pathImage: AssetsData.nameIconSm,
           type: TextInputType.name,
           value: 'محمد أحمد',
         ),
@@ -23,7 +24,7 @@ class EditProfileForm extends StatelessWidget {
           id: 'email',
           label: 'البريد الإلكتروني',
           placeholder: 'example@domain.com',
-          icon: Icons.email_outlined,
+          pathImage: AssetsData.mailIconSm,
           type: TextInputType.emailAddress,
           value: 'mohamed@example.com',
         ),
@@ -31,7 +32,7 @@ class EditProfileForm extends StatelessWidget {
           id: 'phone',
           label: 'رقم الهاتف',
           placeholder: '01xxxxxxxxx',
-          icon: Icons.phone_outlined,
+          pathImage: AssetsData.phoneIconSm,
           type: TextInputType.phone,
           value: '01234567890',
         ),
@@ -85,28 +86,28 @@ class EditProfileForm extends StatelessWidget {
           ),
           ..._dropdownFields.asMap().entries.map((entry) {
             final field = entry.value;
-            final IconData icon;
+            String pathImage;
             switch (field.id) {
               case 'university':
-                icon = Icons.account_balance_outlined;
+                pathImage = AssetsData.universityIconSm;
                 break;
               case 'college':
-                icon = Icons.school_outlined;
+                pathImage = AssetsData.collegeIconSm;
                 break;
               case 'department':
-                icon = Icons.business_outlined;
+                pathImage = AssetsData.departmentIconSm;
                 break;
               case 'studyYear':
-                icon = Icons.calendar_today_outlined;
+                pathImage = AssetsData.studyYearIconSm;
                 break;
               default:
-                icon = Icons.arrow_drop_down_circle_outlined;
+                pathImage = AssetsData.universityIconSm;
             }
             return Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: CustomDropdownField(
                 field: field,
-                icon: icon,
+                pathImage: pathImage,
               ),
             );
           }),

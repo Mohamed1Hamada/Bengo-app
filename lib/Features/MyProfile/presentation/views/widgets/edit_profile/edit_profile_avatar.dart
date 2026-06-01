@@ -95,7 +95,7 @@ class EditProfileAvatar extends StatelessWidget {
       return Image.asset(
         profileImageUrl!,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => _fallback,
+        errorBuilder: (_, _, _) => _fallback,
       );
     }
   }

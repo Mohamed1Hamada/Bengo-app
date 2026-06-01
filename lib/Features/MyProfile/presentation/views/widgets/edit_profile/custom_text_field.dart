@@ -19,10 +19,10 @@ class CustomTextField extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(
-                field.icon,
-                size: 16,
-                color: const Color(0xFF7C3AED),
+              Image.asset(
+                field.pathImage,
+                width: 16,
+                height: 16,
               ),
               const SizedBox(width: 6),
               Text(
