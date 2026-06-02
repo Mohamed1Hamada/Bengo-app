@@ -2,8 +2,8 @@ import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_sta
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ShowMoreStatsRow extends StatelessWidget {
-  const ShowMoreStatsRow({super.key});
+class CoursesStatsRow extends StatelessWidget {
+  const CoursesStatsRow({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +11,16 @@ class ShowMoreStatsRow extends StatelessWidget {
       children: [
         const Expanded(
           child: CustomStatCard(
-            title: 'متوسط السعر',
-            value: '315',
-            suffix: 'ج.م',
+            title: 'دروس مكتملة',
+            value: '42',
+           
           ),
         ),
         SizedBox(width: 12.w),
         const Expanded(
           child: CustomStatCard(
-            title: 'إجمالي الكورسات',
-            value: '8',
+            title: ' اجمالي الدروس',
+            value: '80',
           ),
         ),
       ],

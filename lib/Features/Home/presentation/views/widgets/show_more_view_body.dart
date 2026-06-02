@@ -1,4 +1,5 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_app_header.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_stats_row.dart';
+import 'package:bengo_app/core/utlis/widget/custom_app_header.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_list_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_results_header.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,11 @@ class ShowMoreViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ShowMoreAppHeader(),
+        const CustomAppHeader(
+          title: 'الكل',
+          subtitle: ' كورس متاح 8',
+          floatingWidget: ShowMoreStatsRow(),
+        ),
         SizedBox(height: 90.h),
         const ShowMoreResultsHeader(),
         SizedBox(height: 32.h),

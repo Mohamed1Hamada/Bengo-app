@@ -2,8 +2,8 @@ import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ShowMoreStatCard extends StatelessWidget {
-  const ShowMoreStatCard({
+class CustomStatCard extends StatelessWidget {
+  const CustomStatCard({
     super.key,
     required this.title,
     required this.value,
@@ -17,7 +17,7 @@ class ShowMoreStatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 32.h),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),

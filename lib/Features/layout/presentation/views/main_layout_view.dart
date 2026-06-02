@@ -1,6 +1,6 @@
+import 'package:bengo_app/Features/Courses/presentation/views/widgets/courses_view_body.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/home_view_body.dart';
 import 'package:bengo_app/Features/MyProfile/presentation/views/my_profile_view.dart';
-import 'package:bengo_app/Features/Courses/presentation/views/courses_view.dart';
 import 'package:bengo_app/Features/Saved/presentation/views/widgets/saved_view_body.dart';
 import 'package:bengo_app/Features/Support/presentation/views/widgets/support_view_body.dart';
 import 'package:bengo_app/core/utlis/asstes.dart';
@@ -22,7 +22,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
     const MyProfileView(),
     SavedViewBody(),
     const SupportViewBody(),
-    const CoursesView(),
+    const CoursesViewBody(),
     const HomeViewBody(),
   ];
 
