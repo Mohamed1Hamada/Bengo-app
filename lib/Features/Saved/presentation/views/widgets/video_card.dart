@@ -73,7 +73,7 @@ class VideoCard extends StatelessWidget {
                     children: [
                       // الوقت
                       Text(
-                        video.time,
+                       "${video.durationInMinutes} دقيقة",
                         style: Styles.textStyle12.copyWith(
                           color: Colors.grey,
                         ),

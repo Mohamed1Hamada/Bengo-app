@@ -47,7 +47,7 @@ class BuildStatCardSavedView extends StatelessWidget {
             Text(
               value,
 
-              style: Styles.textStyle18.copyWith(
+              style: Styles.textStyle24.copyWith(
                 fontWeight: FontWeight.bold,
 
                 color: color,
