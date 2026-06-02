@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 class CustomSearchCard extends StatelessWidget {
   final CustomCourseCardModel model;
-  final bool showPaidBadge;  // ← جديد
+  final bool showPaidBadge;
 
   const CustomSearchCard({
     super.key,
     required this.model,
-    this.showPaidBadge = true,  // ← افتراضي true عشان صفحة البحث
+    this.showPaidBadge = true,
   });
 
   @override
@@ -23,14 +23,12 @@ class CustomSearchCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(
-                child: _CourseInfoSection(model: model),
-              ),
+              Expanded(child: _CourseInfoSection(model: model)),
               const SizedBox(width: 10),
               _CourseImage(model: model),
             ],
           ),
-          if (showPaidBadge && model.isPaid)  // ← الشرط الجديد
+          if (showPaidBadge && model.isPaid)
             const Positioned(
               top: 8,
               left: 8,
@@ -63,7 +61,7 @@ class _CourseInfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final priceNumber = model.price.replaceAll(' ج.م', '').trim();
+    final priceNumber = model.price?.replaceAll(' ج.م', '').trim();
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -89,7 +87,7 @@ class _CourseInfoSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        CustomSalarySearchButton(price: priceNumber),
+        if (priceNumber != null) CustomSalarySearchButton(price: priceNumber),
       ],
     );
   }
@@ -105,8 +103,8 @@ class _CourseImage extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: Image.asset(
         model.image,
-        width: 105,    // ← زدت الحجم شوية (كان 90)
-        height: 120,   // ← زدت الحجم شوية (كان 90)
+        width: 105,
+        height: 120,
         fit: BoxFit.cover,
         errorBuilder: (context, error, stackTrace) {
           return Container(

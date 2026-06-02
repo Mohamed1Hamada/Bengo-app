@@ -117,4 +117,9 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xFFD62828), Color(0xFF001F54)],
   );
+  static const LinearGradient kLinearProgressIndicator = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xff10B981), Color(0xff059669), Color(0xff047857)],
+  );
 }
