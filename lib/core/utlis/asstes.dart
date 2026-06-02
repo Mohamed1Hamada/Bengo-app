@@ -44,4 +44,5 @@ class AssetsData {
   static const universityIconSm = 'assets/images/university icon sm.png';
   static const phoneIconSm = 'assets/images/phone icon sm.png';
   static const studyYearIconSm = 'assets/images/study year icon sm.png';
+  static const savedIconIconSm = 'assets/images/saved icon sm.png';
 }
