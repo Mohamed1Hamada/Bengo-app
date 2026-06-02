@@ -10,14 +10,12 @@ class CourseItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        AspectRatio(
-          aspectRatio: 120 / 160,
+        Expanded(
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50.r),
+              borderRadius: BorderRadius.circular(24.r),
               image: const DecorationImage(
                 image: AssetImage(AssetsData.test1),
                 fit: BoxFit.cover,
@@ -32,31 +30,23 @@ class CourseItem extends StatelessWidget {
             ),
           ),
         ),
-
         SizedBox(height: 8.h),
-
-        // 2. اسم الكورس
         Text(
           "محاسبة مالية",
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: Styles.textStyle18.copyWith(
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
             color: const Color(0xFF272323),
-            fontFamily: 'Cairo',
           ),
         ),
-        SizedBox(height: 6.h),
         Text(
           "الفرقة الأولى",
           style: Styles.textStyle14.copyWith(
-            color: const Color(0xFF542343),
-            fontWeight: FontWeight.w600,
-            fontFamily: 'Cairo',
-          ),
+            fontWeight: FontWeight.w700,
+            color: const Color(0xff542343)),
         ),
-
-        SizedBox(height: 12.h),
+        SizedBox(height: 8.h),
         const CustomSalaryHomeButton(price: '299'),
       ],
     );

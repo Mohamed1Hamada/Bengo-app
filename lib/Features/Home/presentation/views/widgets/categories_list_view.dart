@@ -19,7 +19,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70.h,
+      height: 80.h,
       child: ListView.builder(
         itemCount: categories.length,
         scrollDirection: Axis.horizontal,
@@ -36,7 +36,7 @@ class _CategoriesListViewState extends State<CategoriesListView> {
             },
             child: Container(
               margin: EdgeInsets.only(left: 15.w),
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
               decoration: BoxDecoration(
                 color: selectedIndex == index ? const Color(0xff2A2575) : Colors.transparent,
                 borderRadius: BorderRadius.circular(50.r),

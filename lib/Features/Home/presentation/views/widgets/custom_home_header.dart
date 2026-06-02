@@ -12,60 +12,22 @@ class CustomHomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        top: 60.h,
-        bottom: 20.h,
-        right: 20.w,
-        left: 20.w,
-      ),
+      padding: EdgeInsets.only(top: 50.h, bottom: 20.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end, // النصوص محاذاتها لليمين
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Row(
             children: [
-               CustomBalanceCard(balance: '416', onTap: () { 
-                 GoRouter.of(context).push(AppRouter.kBalanceTopUpSuccess);
-               },),
-              SizedBox(width: 30.w),
-
-              GestureDetector(
-                onTap: () {},
-                child: Image.asset(
-                  AssetsData.notificationIcon,
-                  color: Colors.black,
-                  width: 60.w,
-                  height: 60.h,
-                ),
-              ),
-
+              CustomBalanceCard(balance: '416', onTap: () => context.push(AppRouter.kBalanceTopUpSuccess)),
               const Spacer(),
-
-              CircleAvatar(
-                radius: 60.r,
-                backgroundImage: const AssetImage(AssetsData.homeHeaderIcon),
-              ),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none)),
+              SizedBox(width: 10.w),
+              CircleAvatar(radius: 66.r, backgroundImage: const AssetImage(AssetsData.homeHeaderIcon)),
             ],
           ),
-
           SizedBox(height: 24.h),
-
-          // نصوص الترحيب
-          Text(
-            "مرحباً ، محمد",
-            style: Styles.textStyle30.copyWith(
-              fontWeight: FontWeight.w800,
-              color: const Color(0xFF272323),
-              fontFamily: 'Cairo',
-            ),
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            "ماذا تريد أن تتعلم؟",
-            style: Styles.textStyle16.copyWith(
-              color: Colors.grey,
-              fontFamily: 'Cairo',
-            ),
-          ),
+          Text("مرحباً ، محمد", style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w800, color: const Color(0xFF272323))),
+          Text("ماذا تريد أن تتعلم؟", style: Styles.textStyle16.copyWith(color: Colors.grey)),
         ],
       ),
     );
