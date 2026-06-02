@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/Saved/presentation/views/widgets/saved_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SavedView extends StatelessWidget {
@@ -5,6 +6,9 @@ class SavedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      body: SafeArea(child: SavedViewBody()),
+    );
   }
 }

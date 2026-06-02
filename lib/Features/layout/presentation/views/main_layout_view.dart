@@ -1,7 +1,7 @@
 import 'package:bengo_app/Features/Home/presentation/views/widgets/home_view_body.dart';
 import 'package:bengo_app/Features/MyProfile/presentation/views/my_profile_view.dart';
-import 'package:bengo_app/Features/Saved/presentation/views/saved_view.dart';
 import 'package:bengo_app/Features/Courses/presentation/views/courses_view.dart';
+import 'package:bengo_app/Features/Saved/presentation/views/widgets/saved_view_body.dart';
 import 'package:bengo_app/Features/Support/presentation/views/widgets/support_view_body.dart';
 import 'package:bengo_app/core/utlis/asstes.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
@@ -20,23 +20,20 @@ class _MainLayoutViewState extends State<MainLayoutView> {
   // تم الاحتفاظ بالقائمة كما هي مع ترتيب الـ Features الخاص بك
   final List<Widget> _pages = [
     const MyProfileView(),
-    const SavedView(),
+    SavedViewBody(),
     const SupportViewBody(),
     const CoursesView(),
-    const HomeViewBody(), 
+    const HomeViewBody(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
-      
+
       // ريفاكتور: استخدام IndexedStack يضمن عدم تدمير حالة الصفحات عند التنقل
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _pages,
-      ),
-      
+      body: IndexedStack(index: _currentIndex, children: _pages),
+
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: const BoxDecoration(
@@ -53,11 +50,31 @@ class _MainLayoutViewState extends State<MainLayoutView> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNavItem(index: 0, assetPath: AssetsData.profileIcon, label: 'الحساب'),
-              _buildNavItem(index: 1, assetPath: AssetsData.saveIcon, label: 'المحفوظات'),
-              _buildNavItem(index: 2, assetPath: AssetsData.supportIcon, label: 'الدعم'),
-              _buildNavItem(index: 3, assetPath: AssetsData.coursesIcon, label: 'كورساتي'),
-              _buildNavItem(index: 4, assetPath: AssetsData.homeIcon, label: 'الرئيسية'),
+              _buildNavItem(
+                index: 0,
+                assetPath: AssetsData.profileIcon,
+                label: 'الحساب',
+              ),
+              _buildNavItem(
+                index: 1,
+                assetPath: AssetsData.saveIcon,
+                label: 'المحفوظات',
+              ),
+              _buildNavItem(
+                index: 2,
+                assetPath: AssetsData.supportIcon,
+                label: 'الدعم',
+              ),
+              _buildNavItem(
+                index: 3,
+                assetPath: AssetsData.coursesIcon,
+                label: 'كورساتي',
+              ),
+              _buildNavItem(
+                index: 4,
+                assetPath: AssetsData.homeIcon,
+                label: 'الرئيسية',
+              ),
             ],
           ),
         ),
@@ -86,10 +103,18 @@ class _MainLayoutViewState extends State<MainLayoutView> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ).createShader(bounds),
-                  child: ImageIcon(AssetImage(assetPath), color: Colors.white, size: 26),
+                  child: ImageIcon(
+                    AssetImage(assetPath),
+                    color: Colors.white,
+                    size: 26,
+                  ),
                 )
-              : ImageIcon(AssetImage(assetPath), color: Colors.grey.shade400, size: 26),
-          
+              : ImageIcon(
+                  AssetImage(assetPath),
+                  color: Colors.grey.shade400,
+                  size: 26,
+                ),
+
           const SizedBox(height: 6),
 
           // نص العنوان
@@ -101,7 +126,7 @@ class _MainLayoutViewState extends State<MainLayoutView> {
               color: isSelected ? Colors.black87 : Colors.grey.shade400,
             ),
           ),
-          
+
           const SizedBox(height: 6),
 
           // النقطة المتحركة بالأسفل
