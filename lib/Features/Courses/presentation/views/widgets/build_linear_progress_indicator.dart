@@ -7,9 +7,6 @@ class BuildLinearProgressIndicator extends StatelessWidget {
 
   final CustomCourseCardModel model;
 
-  // تعريف التدرج الخاص بحالة "مكتمل"
-  final Gradient _greenGradient = AppStyles.kLinearProgressIndicator;
-
   @override
   Widget build(BuildContext context) {
     bool isCompleted = model.isCompleted == true;
@@ -17,13 +14,12 @@ class BuildLinearProgressIndicator extends StatelessWidget {
     return isCompleted
         ? ShaderMask(
             shaderCallback: (Rect bounds) =>
-                _greenGradient.createShader(bounds),
+                AppStyles.kLinearProgressIndicator.createShader(bounds),
             child: _buildIndicator(Colors.white),
           )
         : _buildIndicator(Colors.blue);
   }
 
-  // دالة مساعدة لبناء المؤشر لتجنب التكرار
   Widget _buildIndicator(Color color) {
     return LinearProgressIndicator(
       value: model.progress ?? 1.0,

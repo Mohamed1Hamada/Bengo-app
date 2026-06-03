@@ -34,7 +34,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   readOnly: true,
                   onTap: () => context.push(AppRouter.kSearchView),
                 ),
-                SizedBox(height: 72.h),
+                SizedBox(height: 120.h),
                 const PromoBanner(),
                 SizedBox(height: 36.h),
                 const CoursesHeader(),

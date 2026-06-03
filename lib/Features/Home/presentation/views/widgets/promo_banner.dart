@@ -9,7 +9,7 @@ class PromoBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300.h,
+      height: 280.h,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -48,12 +48,12 @@ class PromoBanner extends StatelessWidget {
 
           // 2. صورة الشخص (فوق الدوائر)
           Positioned(
-            right: 0,
+            right: -34.w,
             bottom: 0,
             child: Image.asset(
               AssetsData.bannerMan,
               height: 400.h,
-              fit: BoxFit.contain,
+              fit: BoxFit.fitHeight,
             ),
           ),
 

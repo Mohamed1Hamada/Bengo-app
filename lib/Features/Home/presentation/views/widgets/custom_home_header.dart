@@ -12,22 +12,48 @@ class CustomHomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 50.h, bottom: 20.h),
+      padding: EdgeInsets.only(top: 70.h, bottom: 20.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Row(
             children: [
-              CustomBalanceCard(balance: '416', onTap: () => context.push(AppRouter.kBalanceTopUpSuccess)),
+              // كارت الرصيد أولاً
+              CustomBalanceCard(
+                balance: '416',
+                onTap: () => context.push(AppRouter.kBalanceTopUpSuccess),
+              ),
+
+              SizedBox(width: 30.w), // مسافة بسيطة بين الكارت والأيقونة
+              // أيقونة الإشعارات بجوار الكارت
+              Image.asset(
+                AssetsData.notificationIcon,
+                width: 24,
+                height: 24,
+              ),
+
+              // الـ Spacer يدفع العناصر التالية للطرف الآخر
               const Spacer(),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none)),
-              SizedBox(width: 10.w),
-              CircleAvatar(radius: 66.r, backgroundImage: const AssetImage(AssetsData.homeHeaderIcon)),
+
+              // الصورة الشخصية في الطرف الأيمن
+              CircleAvatar(
+                radius: 66.r,
+                backgroundImage: const AssetImage(AssetsData.homeHeaderIcon),
+              ),
             ],
           ),
           SizedBox(height: 24.h),
-          Text("مرحباً ، محمد", style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w800, color: const Color(0xFF272323))),
-          Text("ماذا تريد أن تتعلم؟", style: Styles.textStyle16.copyWith(color: Colors.grey)),
+          Text(
+            "مرحباً ، محمد",
+            style: Styles.textStyle30.copyWith(
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFF272323),
+            ),
+          ),
+          Text(
+            "ماذا تريد أن تتعلم؟",
+            style: Styles.textStyle16.copyWith(color: Colors.grey[600]),
+          ),
         ],
       ),
     );

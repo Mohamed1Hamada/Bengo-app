@@ -10,7 +10,7 @@ class CoursesHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // عرض المزيد (على الشمال)
+       
         GestureDetector(
           onTap: () {
             GoRouter.of(context).push(AppRouter.kShowMoreView);
@@ -18,8 +18,8 @@ class CoursesHeader extends StatelessWidget {
           child: Text(
             "عرض المزيد",
             style: Styles.textStyle16.copyWith(
-              color: const Color(0xFFD62828), // اللون الأحمر/الوردي زي الفيجما
-              fontWeight: FontWeight.w600,
+              color: const Color(0xFFD62828), 
+              fontWeight: FontWeight.w500,
               fontFamily: 'Cairo',
             ),
           ),
@@ -27,10 +27,10 @@ class CoursesHeader extends StatelessWidget {
 
         const Spacer(),
 
-        // كورسات (على اليمين)
+     
         Text(
           "كورسات",
-          style: Styles.textStyle24.copyWith(
+          style: Styles.textStyle22.copyWith(
             fontWeight: FontWeight.bold,
             color: const Color(0xFF272323),
             fontFamily: 'Cairo',
