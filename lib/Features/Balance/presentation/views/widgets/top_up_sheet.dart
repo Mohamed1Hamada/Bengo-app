@@ -3,10 +3,11 @@ import 'package:bengo_app/Features/Balance/presentation/views/widgets/charge_cod
 import 'package:bengo_app/Features/Balance/presentation/views/widgets/help_message_box.dart';
 import 'package:bengo_app/Features/Balance/presentation/views/widgets/top_up_button.dart';
 import 'package:bengo_app/Features/Balance/presentation/views/widgets/top_up_header.dart';
+import 'package:bengo_app/core/utlis/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'success_message_box.dart';
-
 
 class TopUpSheet extends StatelessWidget {
   const TopUpSheet({
@@ -60,6 +61,9 @@ class TopUpSheet extends StatelessWidget {
                   TopUpButton(
                     text: buttonText,
                     opacity: buttonOpacity,
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kBalanceTopUpSuccess);
+                    },
                   ),
                 ],
               ),

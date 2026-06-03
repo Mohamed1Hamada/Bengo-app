@@ -11,7 +11,6 @@ class BuildCategoryContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (selectedCategoryIndex == 1) {
-     
       return SliverPadding(
         padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
         sliver: SliverGrid(
@@ -28,7 +27,6 @@ class BuildCategoryContent extends StatelessWidget {
         ),
       );
     } else {
-      // تغليف الـ Widget العادي بـ SliverToBoxAdapter
       return const SliverToBoxAdapter(
         child: Padding(
           padding: EdgeInsets.only(top: 50),

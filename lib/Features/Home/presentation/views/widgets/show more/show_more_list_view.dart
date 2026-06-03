@@ -1,5 +1,5 @@
 import 'package:bengo_app/Features/Home/data/dummy_data.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_search_card.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/search/custom_search_card.dart';
 import 'package:flutter/material.dart';
 
 class ShowMoreListView extends StatelessWidget {

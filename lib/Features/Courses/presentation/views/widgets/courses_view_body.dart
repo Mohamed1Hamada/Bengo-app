@@ -1,7 +1,7 @@
 import 'package:bengo_app/Features/Courses/presentation/views/widgets/courses_list_view.dart';
 import 'package:bengo_app/Features/Courses/presentation/views/widgets/courses_status_row.dart';
 import 'package:bengo_app/Features/Home/data/models/custom_course_card_model.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_title_result_header.dart';
+import 'package:bengo_app/core/utlis/widget/custom_title_result_header.dart';
 import 'package:bengo_app/core/utlis/asstes.dart';
 import 'package:bengo_app/core/utlis/widget/custom_app_header.dart';
 import 'package:flutter/material.dart';

@@ -18,24 +18,17 @@ class CustomHomeHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              // كارت الرصيد أولاً
               CustomBalanceCard(
                 balance: '416',
-                onTap: () => context.push(AppRouter.kBalanceTopUpSuccess),
+                onTap: () => context.push(AppRouter.kBalanceTopUpView),
               ),
 
-              SizedBox(width: 30.w), // مسافة بسيطة بين الكارت والأيقونة
-              // أيقونة الإشعارات بجوار الكارت
-              Image.asset(
-                AssetsData.notificationIcon,
-                width: 24,
-                height: 24,
-              ),
+              SizedBox(width: 30.w),
 
-              // الـ Spacer يدفع العناصر التالية للطرف الآخر
+              Image.asset(AssetsData.notificationIcon, width: 24, height: 24),
+
               const Spacer(),
 
-              // الصورة الشخصية في الطرف الأيمن
               CircleAvatar(
                 radius: 66.r,
                 backgroundImage: const AssetImage(AssetsData.homeHeaderIcon),

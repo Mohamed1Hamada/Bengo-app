@@ -21,7 +21,9 @@ class BalanceTopUp1View extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(24, 24, 24, 74),
-                child: TopUpSheet(),
+                child: TopUpSheet(
+                  
+                ),
               ),
             ),
           ),

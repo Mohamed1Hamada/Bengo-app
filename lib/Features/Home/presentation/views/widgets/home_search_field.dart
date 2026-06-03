@@ -6,9 +6,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class HomeSearchField extends StatelessWidget {
   const HomeSearchField({
     super.key,
-    this.onTap,        // عشان لما تضغط عليه يفتح صفحة تانية
-    this.readOnly = false, // لو true مش هيخلي اليوزر يكتب (يستخدم كزرار)
-    this.autoFocus = false, // لو true هيفتح الكيبورد أول ما الصفحة تفتح
+    this.onTap,     
+    this.readOnly = false, 
+    this.autoFocus = false, 
   });
 
   final VoidCallback? onTap;
@@ -20,7 +20,7 @@ class HomeSearchField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 235, 240, 253),
-        borderRadius: BorderRadius.circular(15.r), // خليته 15 زي الفيجما (كان 30)
+        borderRadius: BorderRadius.circular(15.r), 
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.03),
@@ -30,8 +30,8 @@ class HomeSearchField extends StatelessWidget {
         ],
       ),
       child: TextField(
-        onTap: onTap,        // تنفيذ الأكشن عند الضغط
-        readOnly: readOnly,  // منع أو سماح الكتابة
+        onTap: onTap,        
+        readOnly: readOnly, 
         autofocus: autoFocus, 
         textAlign: TextAlign.right,
         cursorColor: Colors.grey,
@@ -43,7 +43,7 @@ class HomeSearchField extends StatelessWidget {
           ),
           suffixIcon: Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: FaIcon( // استخدمت Icon عادي بـ FontAwesomeIcons عشان التوافق
+            child: FaIcon( 
               FontAwesomeIcons.magnifyingGlass,
               color: const Color(0xFF9E9E9E),
               size: 20.sp,
@@ -55,7 +55,7 @@ class HomeSearchField extends StatelessWidget {
           ),
           border: InputBorder.none,
           contentPadding: EdgeInsets.symmetric(
-            vertical: 18.h, // ظبطت الارتفاع ليكون متناسق (32 كان ضخم جداً)
+            vertical: 18.h, 
             horizontal: 20.w,
           ),
         ),
