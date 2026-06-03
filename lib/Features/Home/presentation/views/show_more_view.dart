@@ -1,4 +1,4 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_view_body.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show%20more/show_more_view_body.dart';
 import 'package:flutter/material.dart';
 
 class ShowMoreView extends StatelessWidget {

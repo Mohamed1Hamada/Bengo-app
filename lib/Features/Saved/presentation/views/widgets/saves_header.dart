@@ -1,5 +1,5 @@
 import 'package:bengo_app/Features/Home/presentation/views/widgets/header_circle_button.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_title_column.dart';
+import 'package:bengo_app/core/utlis/widget/custom_title_column.dart';
 import 'package:bengo_app/Features/Saved/presentation/views/widgets/build_stats_card_saved_view.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';

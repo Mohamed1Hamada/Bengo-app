@@ -1,6 +1,6 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/search_app_header.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/search_list_view.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/search_results_header.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/search/search_app_header.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/search/search_list_view.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/search/search_results_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -13,20 +13,23 @@ class CourseItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24.r),
-              image: const DecorationImage(
-                image: AssetImage(AssetsData.test1),
-                fit: BoxFit.cover,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
+          child: Padding(
+            padding: EdgeInsets.all(8.w),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.r),
+                image: const DecorationImage(
+                  image: AssetImage(AssetsData.test1),
+                  fit: BoxFit.cover,
                 ),
-              ],
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -44,9 +47,10 @@ class CourseItem extends StatelessWidget {
           "الفرقة الأولى",
           style: Styles.textStyle14.copyWith(
             fontWeight: FontWeight.w700,
-            color: const Color(0xff542343)),
+            color: const Color(0xff542343),
+          ),
         ),
-        SizedBox(height: 8.h),
+        SizedBox(height: 32.h),
         const CustomSalaryHomeButton(price: '299'),
       ],
     );

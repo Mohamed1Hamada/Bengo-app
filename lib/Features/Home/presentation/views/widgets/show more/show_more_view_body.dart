@@ -1,6 +1,6 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_stats_row.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show%20more/show_more_stats_row.dart';
 import 'package:bengo_app/core/utlis/widget/custom_app_header.dart';
-import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_list_view.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show%20more/show_more_list_view.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_title_result_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

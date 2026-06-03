@@ -1,4 +1,4 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/show_more_stat_card.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/show%20more/show_more_stat_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,4 +1,4 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/search_view_body.dart';
+import 'package:bengo_app/Features/Home/presentation/views/widgets/search/search_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {

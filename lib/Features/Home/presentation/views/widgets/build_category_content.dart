@@ -17,9 +17,9 @@ class BuildCategoryContent extends StatelessWidget {
         sliver: SliverGrid(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            crossAxisSpacing: 14.w,
-            mainAxisSpacing: 14.h,
-            childAspectRatio: 0.52,
+            crossAxisSpacing: 20.w,
+            mainAxisSpacing: 20.h,
+            childAspectRatio: 0.48,
           ),
           delegate: SliverChildBuilderDelegate(
             (context, index) => const CourseItem(),

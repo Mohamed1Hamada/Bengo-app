@@ -1,4 +1,4 @@
-import 'package:bengo_app/Features/Home/presentation/views/widgets/custom_title_column.dart';
+import 'package:bengo_app/core/utlis/widget/custom_title_column.dart';
 import 'package:bengo_app/Features/Home/presentation/views/widgets/header_circle_button.dart';
 import 'package:bengo_app/core/utlis/styles.dart';
 import 'package:flutter/material.dart';
