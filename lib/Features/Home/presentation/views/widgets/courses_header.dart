@@ -1,0 +1,40 @@
+import 'package:bengo_app/core/utils/app_router.dart';
+import 'package:bengo_app/core/utils/styles.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+class CoursesHeader extends StatelessWidget {
+  const CoursesHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        GestureDetector(
+          onTap: () {
+            GoRouter.of(context).push(AppRouter.kShowMoreView);
+          },
+          child: Text(
+            "عرض المزيد",
+            style: Styles.textStyle16.copyWith(
+              color: const Color(0xFFD62828),
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Cairo',
+            ),
+          ),
+        ),
+
+        const Spacer(),
+
+        Text(
+          "كورسات",
+          style: Styles.textStyle22.copyWith(
+            fontWeight: FontWeight.bold,
+            color: const Color(0xFF272323),
+            fontFamily: 'Cairo',
+          ),
+        ),
+      ],
+    );
+  }
+}
