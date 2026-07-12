@@ -122,4 +122,9 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xff10B981), Color(0xff059669), Color(0xff047857)],
   );
+  static const LinearGradient kPriceButton = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
+  );
 }

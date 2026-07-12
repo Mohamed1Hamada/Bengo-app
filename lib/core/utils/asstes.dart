@@ -45,4 +45,6 @@ class AssetsData {
   static const phoneIconSm = 'assets/images/phone icon sm.png';
   static const studyYearIconSm = 'assets/images/study year icon sm.png';
   static const savedIconIconSm = 'assets/images/saved icon sm.png';
+  static const mozkratIcon = 'assets/images/mozkrat icon.png';
+  static const examsIcon = 'assets/images/exams icon.png';
 }

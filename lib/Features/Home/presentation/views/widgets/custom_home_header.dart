@@ -12,7 +12,7 @@ class CustomHomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 70.h, bottom: 20.h),
+      padding: EdgeInsets.only(top: 100.h, bottom: 20.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
@@ -30,7 +30,7 @@ class CustomHomeHeader extends StatelessWidget {
               const Spacer(),
 
               CircleAvatar(
-                radius: 66.r,
+                radius: 50.r,
                 backgroundImage: const AssetImage(AssetsData.homeHeaderIcon),
               ),
             ],

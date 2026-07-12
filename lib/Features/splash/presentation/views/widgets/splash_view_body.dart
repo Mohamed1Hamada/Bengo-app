@@ -8,17 +8,15 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(gradient: AppStyles.kMainGradient),
-        child: Stack(
-          children: [
-            const BackgroundCurves(),
-            Center(child: SplashContent()),
-          ],
-        ),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: const BoxDecoration(gradient: AppStyles.kMainGradient),
+      child: Stack(
+        children: [
+          const BackgroundCurves(),
+          Center(child: SplashContent()),
+        ],
       ),
     );
   }

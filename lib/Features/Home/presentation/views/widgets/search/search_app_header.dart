@@ -10,7 +10,7 @@ class SearchAppHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //    ارتفاع الجزء الملون فقط
-    double headerHeight = 400.h;
+    double headerHeight = 420.h;
 
     return Stack(
       clipBehavior: Clip.none, //   عشان الحقل يخرج برا الحدود
@@ -28,7 +28,7 @@ class SearchAppHeader extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.only(top: 60.h, left: 24.w, right: 24.w),
+            padding: EdgeInsets.only(top: 120.h, left: 24.w, right: 24.w),
             child: const SearchAppBarRow(), // الصف اللي فيه الزراير والعنوان
           ),
         ),

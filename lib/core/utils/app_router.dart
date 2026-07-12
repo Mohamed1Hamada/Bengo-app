@@ -11,6 +11,7 @@ import 'package:bengo_app/Features/MyProfile/presentation/views/edit_my_profile_
 import 'package:bengo_app/Features/MyProfile/presentation/views/my_profile_view.dart';
 import 'package:bengo_app/Features/Saved/presentation/views/saved_view.dart';
 import 'package:bengo_app/Features/Support/presentation/views/support_view.dart';
+import 'package:bengo_app/Features/course_details/presentation/view/course_details_view.dart';
 import 'package:bengo_app/Features/layout/presentation/views/main_layout_view.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
@@ -35,6 +36,7 @@ abstract class AppRouter {
   static const String kCoursesView = '/coursesView';
   static const String kMainLayoutView = '/main-layout';
   static const String kEditMyProfileView = '/edit-my-profile';
+  static const String kCourseDetailsView = '/course-detailsView';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -137,6 +139,13 @@ abstract class AppRouter {
         path: kEditMyProfileView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const EditMyProfileView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kCourseDetailsView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const CourseDetailsView(),
           state: state,
         ),
       ),

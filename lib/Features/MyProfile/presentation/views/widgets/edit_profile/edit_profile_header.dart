@@ -14,7 +14,7 @@ class EditProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(16, 46, 16, 140),
+      padding: const EdgeInsets.fromLTRB(16, 56, 16, 140),
       decoration: BoxDecoration(gradient: AppStyles.kSalaryHomeButton),
       child: Row(
         children: [
