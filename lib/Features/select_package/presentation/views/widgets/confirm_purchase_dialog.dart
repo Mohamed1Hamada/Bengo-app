@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/select_package/presentation/views/widgets/success_purchase_dialog.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -151,7 +152,20 @@ class ConfirmPurchaseDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+
+                        showDialog(
+                          context: context,
+                          builder: (context) => Dialog(
+                            backgroundColor: Colors.transparent,
+                            insetPadding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                            ),
+                            child: SuccessPurchaseDialog(itemName: itemName),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,
@@ -163,8 +177,9 @@ class ConfirmPurchaseDialog extends StatelessWidget {
                       ),
                       child: Text(
                         "شراء الآن",
-                        style: Styles.textStyle18.copyWith(
+                        style: Styles.textStyle16.copyWith(
                           fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
                     ),

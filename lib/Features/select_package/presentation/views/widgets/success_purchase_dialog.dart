@@ -9,10 +9,19 @@ class SuccessPurchaseDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // تطبيق مبدأ الشرطة لضمان تنسيق الاسم في شاشة النجاح أيضاً
+    List<String> titleParts = itemName.split('-');
+    String firstPart = titleParts[0].trim();
+    if (titleParts.length > 1) {
+      firstPart += " -";
+    }
+    String secondPart = titleParts.length > 1 ? titleParts[1].trim() : "";
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Container(
-        padding: EdgeInsets.all(20.w),
+        width: 520.w,
+        // 1. أزلنا الـ Padding من هنا لكي يملأ الهيدر الشاشة
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -20,30 +29,28 @@ class SuccessPurchaseDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // 1. الهيدر المتدرج مع علامة الصح
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 25.h),
+              padding: EdgeInsets.symmetric(vertical: 35.h),
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFFD62828), Color(0xFF6A4C93)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                gradient: AppStyles.kSalaryHomeButton,
+                // الحواف الدائرية من الأعلى فقط لتندمج مع الديالوج
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(30),
                 ),
-                borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
                 children: [
                   Container(
-                    width: 45,
-                    height: 45,
+                    width: 60,
+                    height: 60,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
                       Icons.check,
-                      color: Color(0xFF4CAF50),
+                      color: Color(0xFF2B4EA2),
                       size: 30,
                     ),
                   ),
@@ -58,83 +65,111 @@ class SuccessPurchaseDialog extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20.h),
-            // 2. تفاصيل المنتج الذي تم شراؤه
-            Container(
-              padding: EdgeInsets.all(16.w),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF5F7FB),
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.grey[200]!),
-              ),
+
+            // 3. نضع باقي المحتوى داخل Padding مستقل
+            Padding(
+              padding: EdgeInsets.all(20.w),
               child: Column(
                 children: [
-                  Text(
-                    itemName,
-                    style: Styles.textStyle16.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xff272323),
+                  Container(
+                    padding: EdgeInsets.all(16.w),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF5F7FB),
+                      borderRadius: BorderRadius.circular(15),
+                      border: Border.all(color: Colors.grey[200]!),
                     ),
-                    textAlign: TextAlign.center,
+                    child: Column(
+                      children: [
+                        Text(
+                          firstPart, // السطر الأول مع الشرطة
+                          style: Styles.textStyle16.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xff272323),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        if (secondPart.isNotEmpty)
+                          Text(
+                            secondPart, // السطر الثاني
+                            style: Styles.textStyle16.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xff272323),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "تم إضافة المذكرة إلى حسابك بنجاح ويمكنك الوصول إليه الآن",
+                          style: Styles.textStyle12.copyWith(
+                            color: Colors.grey[600],
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    "تم إضافة المذكرة إلى حسابك بنجاح ويمكنك الوصول إليه الآن",
-                    style: Styles.textStyle12.copyWith(color: Colors.grey[600]),
-                    textAlign: TextAlign.center,
+                  SizedBox(height: 20.h),
+                  // تاغ خصم الكوينز
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF0F4FD),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey[200]!),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/cIcon.png",
+                          width: 20,
+                          height: 20,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          "تم خصم 25 كوينز",
+                          style: Styles.textStyle16.copyWith(
+                            color: const Color(0xFF2B4EA2),
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      gradient: AppStyles.kSalaryHomeButton,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.pop(context),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 15.h),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: const Text(
+                        "حسناً",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20.h),
-            // 3. تاغ خصم الكوينز
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF0F4FD),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.grey[200]!),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(
-                    Icons.monetization_on,
-                    color: Color(0xFFF9C402),
-                    size: 16,
-                  ),
-                  const SizedBox(width: 5),
-                  Text(
-                    "تم خصم 25 كوينز",
-                    style: Styles.textStyle12.copyWith(
-                      color: Colors.grey[700],
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 30.h),
-            // 4. زر موافق
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () => Navigator.pop(context),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF6A4C93),
-                  foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 15.h),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                child: const Text(
-                  "حسناً",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-            SizedBox(height: 10.h),
           ],
         ),
       ),

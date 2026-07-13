@@ -127,4 +127,9 @@ abstract class AppStyles {
     end: Alignment.bottomCenter,
     colors: [Color(0xFFFFD700), Color(0xFFFFA500)],
   );
+  static const LinearGradient kOkButton = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFF2B4EA2), Color(0xFF8B2575), Color(0xFFD62828)],
+  );
 }
