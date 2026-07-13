@@ -1,3 +1,4 @@
+import 'package:bengo_app/Features/select_package/presentation/views/widgets/confirm_purchase_dialog.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -157,11 +158,40 @@ class CourseContentItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(14),
                 border: Border.all(color: Colors.orange[200]!),
               ),
-              child: Text(
-                "$price ج.م",
-                style: Styles.textStyle14.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                      backgroundColor: Colors.transparent,
+                      insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: SizedBox(
+                        height: 600.h, // هنا تحدد الطول الثابت للديالوج بالكامل
+                        child: ConfirmPurchaseDialog(
+                          itemName: title,
+                          price: price,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: AppStyles.kPriceButton,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.orange[200]!),
+                  ),
+                  child: Text(
+                    "$price ج.م",
+                    style: Styles.textStyle12.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ),

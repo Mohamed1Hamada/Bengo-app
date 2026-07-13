@@ -14,6 +14,7 @@ import 'package:bengo_app/Features/Support/presentation/views/support_view.dart'
 import 'package:bengo_app/Features/course_details/presentation/view/course_details_view.dart';
 import 'package:bengo_app/Features/layout/presentation/views/main_layout_view.dart';
 import 'package:bengo_app/Features/onBoard/presentation/views/on_board_view.dart';
+import 'package:bengo_app/Features/select_package/presentation/views/select_package_view.dart';
 import 'package:bengo_app/Features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -37,6 +38,7 @@ abstract class AppRouter {
   static const String kMainLayoutView = '/main-layout';
   static const String kEditMyProfileView = '/edit-my-profile';
   static const String kCourseDetailsView = '/course-detailsView';
+  static const String kSelectPackageView = '/select-packageView';
 
   static final GoRouter router = GoRouter(
     initialLocation: kSplashView,
@@ -146,6 +148,13 @@ abstract class AppRouter {
         path: kCourseDetailsView,
         pageBuilder: (context, state) => _buildCustomTransitionPage(
           child: const CourseDetailsView(),
+          state: state,
+        ),
+      ),
+      GoRoute(
+        path: kSelectPackageView,
+        pageBuilder: (context, state) => _buildCustomTransitionPage(
+          child: const SelectPackageView(),
           state: state,
         ),
       ),
