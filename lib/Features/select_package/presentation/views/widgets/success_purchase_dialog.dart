@@ -1,6 +1,8 @@
+import 'package:bengo_app/core/utils/app_router.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class SuccessPurchaseDialog extends StatelessWidget {
   final String itemName;
@@ -9,7 +11,6 @@ class SuccessPurchaseDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // تطبيق مبدأ الشرطة لضمان تنسيق الاسم في شاشة النجاح أيضاً
     List<String> titleParts = itemName.split('-');
     String firstPart = titleParts[0].trim();
     if (titleParts.length > 1) {
@@ -21,7 +22,7 @@ class SuccessPurchaseDialog extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Container(
         width: 520.w,
-        // 1. أزلنا الـ Padding من هنا لكي يملأ الهيدر الشاشة
+
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -34,7 +35,7 @@ class SuccessPurchaseDialog extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 35.h),
               decoration: BoxDecoration(
                 gradient: AppStyles.kSalaryHomeButton,
-                // الحواف الدائرية من الأعلى فقط لتندمج مع الديالوج
+
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(30),
                 ),
@@ -66,7 +67,6 @@ class SuccessPurchaseDialog extends StatelessWidget {
               ),
             ),
 
-            // 3. نضع باقي المحتوى داخل Padding مستقل
             Padding(
               padding: EdgeInsets.all(20.w),
               child: Column(
@@ -81,7 +81,7 @@ class SuccessPurchaseDialog extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          firstPart, // السطر الأول مع الشرطة
+                          firstPart,
                           style: Styles.textStyle16.copyWith(
                             fontWeight: FontWeight.bold,
                             color: const Color(0xff272323),
@@ -90,7 +90,7 @@ class SuccessPurchaseDialog extends StatelessWidget {
                         ),
                         if (secondPart.isNotEmpty)
                           Text(
-                            secondPart, // السطر الثاني
+                            secondPart,
                             style: Styles.textStyle16.copyWith(
                               fontWeight: FontWeight.bold,
                               color: const Color(0xff272323),
@@ -109,7 +109,7 @@ class SuccessPurchaseDialog extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20.h),
-                  // تاغ خصم الكوينز
+
                   Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 12,
@@ -148,7 +148,13 @@ class SuccessPurchaseDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: ElevatedButton(
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () {
+                        // 1. إغلاق نافذة النجاح
+                        Navigator.pop(context);
+
+                        // 2. الانتقال إلى صفحة تشغيل الفيديو باستخدام go_router
+                        GoRouter.of(context).go(AppRouter.kCoursePlayerView);
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.transparent,
                         shadowColor: Colors.transparent,

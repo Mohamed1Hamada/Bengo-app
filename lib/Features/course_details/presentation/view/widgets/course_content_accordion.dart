@@ -72,7 +72,6 @@ class CourseContentAccordion extends StatelessWidget {
                   ],
                 ),
                 subtitle: null,
-
                 children: [
                   Container(
                     color: Colors.white,
@@ -102,13 +101,12 @@ class CourseContentItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // منطق تقسيم النص
     List<String> titleParts = title.split('-');
     String firstPart = titleParts[0].trim();
-
     if (titleParts.length > 1) {
       firstPart += " -";
     }
-
     String secondPart = titleParts.length > 1 ? titleParts[1].trim() : "";
 
     return Padding(
@@ -151,46 +149,33 @@ class CourseContentItem extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 12),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                gradient: AppStyles.kPriceButton,
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Colors.orange[200]!),
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => Dialog(
-                      backgroundColor: Colors.transparent,
-                      insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: SizedBox(
-                        height: 600.h, // هنا تحدد الطول الثابت للديالوج بالكامل
-                        child: ConfirmPurchaseDialog(
-                          itemName: title,
-                          price: price,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
+
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => Dialog(
+                    backgroundColor: Colors.transparent,
+                    insetPadding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: ConfirmPurchaseDialog(itemName: title, price: price),
                   ),
-                  decoration: BoxDecoration(
-                    gradient: AppStyles.kPriceButton,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.orange[200]!),
-                  ),
-                  child: Text(
-                    "$price ج.م",
-                    style: Styles.textStyle12.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  gradient: AppStyles.kPriceButton,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: Colors.orange[200]!),
+                ),
+                child: Text(
+                  "$price ج.م",
+                  style: Styles.textStyle12.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
