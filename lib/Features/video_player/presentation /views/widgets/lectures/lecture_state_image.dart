@@ -1,5 +1,6 @@
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/lectures/course_lecture_card.dart';
 import 'package:flutter/material.dart';
+
+import 'lecture_watch_state.dart';
 
 class LectureStateImage extends StatelessWidget {
   const LectureStateImage({super.key, required this.watchState});

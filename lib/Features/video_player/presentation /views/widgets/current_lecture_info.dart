@@ -14,7 +14,7 @@ class CurrentLectureInfo extends StatelessWidget {
           child: Text(
             'المحاضرة الأولى - مقدمة\nفي المحاسبة',
             textAlign: TextAlign.right,
-            style: Styles.textStyle22.copyWith(
+            style: Styles.textStyle20.copyWith(
               color: Colors.black,
               fontWeight: FontWeight.w800,
               height: 1.42,

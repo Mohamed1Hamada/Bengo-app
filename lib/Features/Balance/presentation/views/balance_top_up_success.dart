@@ -19,7 +19,7 @@ class BalanceTopUpSuccess extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.fromLTRB(24, 24, 24, 74),
+                padding: EdgeInsets.fromLTRB(24, 24, 24, 50),
                 child: TopUpSheet(
                   isSuccess: true,
                   chargeCodeText: 'dfdsf343fdfdsf',

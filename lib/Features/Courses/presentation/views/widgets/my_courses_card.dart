@@ -2,6 +2,7 @@ import 'package:bengo_app/Features/Courses/presentation/views/widgets/build_line
 import 'package:bengo_app/Features/Home/data/models/custom_course_card_model.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCoursesCard extends StatelessWidget {
   final CustomCourseCardModel model;
@@ -97,12 +98,12 @@ class _CourseInfoSection extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(width: 32),
+        SizedBox(width: 28.w),
         Text(
           "تم شراء الكورس كامل",
           style: Styles.textStyle12.copyWith(
             color: const Color(0xff10B981),
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CourseContentTabs extends StatelessWidget {
   const CourseContentTabs({
@@ -90,8 +91,8 @@ class CourseContentTabItem extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(16),
         child: Ink(
-          width: 106,
-          height: 64,
+          width: 210.w,
+          height: 170.h,
           decoration: BoxDecoration(
             color: isSelected ? null : unSelectedButtonColor,
             gradient: isSelected ? AppStyles.kMainGradient : null,
@@ -111,7 +112,7 @@ class CourseContentTabItem extends StatelessWidget {
             children: [
               Image.asset(
                 imagePath,
-                width: isSelected ? 28 : 25,
+                width: isSelected ? 22 : 22,
                 height: isSelected ? 28 : 25,
                 fit: BoxFit.contain,
 

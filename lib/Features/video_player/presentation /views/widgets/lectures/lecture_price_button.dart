@@ -23,14 +23,17 @@ class LecturePriceButton extends StatelessWidget {
             gradient: AppStyles.kPriceButton,
           ),
           child: Center(
-            child: FittedBox(
-              child: Text(
-                price,
-                textAlign: TextAlign.center,
-                style: Styles.textStyle14.copyWith(
-                  color: Colors.white,
-                  height: 1.1,
-                  fontWeight: FontWeight.w700,
+            child: Padding(
+              padding: const EdgeInsets.all(7),
+              child: FittedBox(
+                child: Text(
+                  price,
+                  textAlign: TextAlign.center,
+                  style: Styles.textStyle14.copyWith(
+                    color: Colors.white,
+                    height: 1.1,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
             ),

@@ -1,7 +1,8 @@
 import 'package:bengo_app/Features/select_package/presentation/views/widgets/confirm_purchase_dialog.dart';
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/lectures/course_lecture_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../lectures/course_lecture_card.dart';
 
 class VideosContent extends StatefulWidget {
   const VideosContent({super.key});
@@ -12,6 +13,36 @@ class VideosContent extends StatefulWidget {
 
 class _VideosContentState extends State<VideosContent> {
   int selectedLectureIndex = 0;
+
+  static const List<_LectureItem> _lectures = [
+    _LectureItem(
+      title: 'المحاضرة الأولى - مقدمة\nفي المحاسبة',
+      duration: '45:30',
+      watchState: LectureWatchState.completed,
+    ),
+    _LectureItem(
+      title: 'المحاضرة الثانية - المعادلة المحاسبية',
+      duration: '38:15',
+      watchState: LectureWatchState.completed,
+    ),
+    _LectureItem(
+      title: 'المحاضرة الثالثة - القيود اليومية',
+      duration: '52:20',
+      watchState: LectureWatchState.playable,
+    ),
+    _LectureItem(
+      title: 'المحاضرة الرابعة - دفتر الأستاذ',
+      duration: '41:45',
+      watchState: LectureWatchState.locked,
+      price: '48 ج.م',
+    ),
+    _LectureItem(
+      title: 'المحاضرة الخامسة - ميزان المراجعة',
+      duration: '48:10',
+      watchState: LectureWatchState.locked,
+      price: '60 ج.م',
+    ),
+  ];
 
   void _selectLecture(int index) {
     setState(() {
@@ -36,41 +67,28 @@ class _VideosContentState extends State<VideosContent> {
     );
   }
 
-  Widget _lectureGap() {
-    return const SizedBox(height: 12);
-  }
+  Widget _lectureCard({required int index, required _LectureItem item}) {
+    final bool isLocked = item.watchState == LectureWatchState.locked;
 
-  Widget _availableLectureCard({
-    required int index,
-    required String title,
-    required String duration,
-    required LectureWatchState watchState,
-  }) {
     return CourseLectureCard(
-      title: title,
-      duration: duration,
-      isSelected: selectedLectureIndex == index,
-      watchState: watchState,
-      onTap: () {
-        _selectLecture(index);
-      },
-    );
-  }
-
-  Widget _lockedLectureCard({
-    required String title,
-    required String duration,
-    required String price,
-  }) {
-    return CourseLectureCard(
-      title: title,
-      duration: duration,
-      isSelected: false,
-      watchState: LectureWatchState.locked,
-      price: price,
-      onPriceTap: () {
-        _showPurchaseDialog(lectureTitle: title, lecturePrice: price);
-      },
+      title: item.title,
+      duration: item.duration,
+      isSelected: isLocked ? false : selectedLectureIndex == index,
+      watchState: item.watchState,
+      price: item.price,
+      onTap: isLocked
+          ? null
+          : () {
+              _selectLecture(index);
+            },
+      onPriceTap: item.price == null
+          ? null
+          : () {
+              _showPurchaseDialog(
+                lectureTitle: item.title,
+                lecturePrice: item.price!,
+              );
+            },
     );
   }
 
@@ -78,47 +96,25 @@ class _VideosContentState extends State<VideosContent> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _availableLectureCard(
-          index: 0,
-          title: 'المحاضرة الأولى - مقدمة\nفي المحاسبة',
-          duration: '45:30',
-          watchState: LectureWatchState.completed,
-        ),
-
-        _lectureGap(),
-
-        _availableLectureCard(
-          index: 1,
-          title: 'المحاضرة الثانية - المعادلة المحاسبية',
-          duration: '38:15',
-          watchState: LectureWatchState.completed,
-        ),
-
-        _lectureGap(),
-
-        _availableLectureCard(
-          index: 2,
-          title: 'المحاضرة الثالثة - القيود اليومية',
-          duration: '52:20',
-          watchState: LectureWatchState.playable,
-        ),
-
-        _lectureGap(),
-
-        _lockedLectureCard(
-          title: 'المحاضرة الرابعة - دفتر الأستاذ',
-          duration: '41:45',
-          price: '48 ج.م',
-        ),
-
-        _lectureGap(),
-
-        _lockedLectureCard(
-          title: 'المحاضرة الخامسة - ميزان المراجعة',
-          duration: '48:10',
-          price: '60 ج.م',
-        ),
+        for (int index = 0; index < _lectures.length; index++) ...[
+          _lectureCard(index: index, item: _lectures[index]),
+          if (index != _lectures.length - 1) const SizedBox(height: 12),
+        ],
       ],
     );
   }
+}
+
+class _LectureItem {
+  const _LectureItem({
+    required this.title,
+    required this.duration,
+    required this.watchState,
+    this.price,
+  });
+
+  final String title;
+  final String duration;
+  final LectureWatchState watchState;
+  final String? price;
 }

@@ -1,9 +1,11 @@
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/lectures/lecture_price_button.dart';
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/lectures/lecture_state_image.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-enum LectureWatchState { completed, playable, locked }
+import 'lecture_price_button.dart';
+import 'lecture_state_image.dart';
+import 'lecture_watch_state.dart';
+
+export 'lecture_watch_state.dart';
 
 class CourseLectureCard extends StatelessWidget {
   const CourseLectureCard({
@@ -39,8 +41,8 @@ class CourseLectureCard extends StatelessWidget {
 
     final Color selectedBorderColor = AppStyles.kGradientEndColor;
 
-    final Color selectedTextColor = AppStyles.kGradientEndColor;
-    final Color unSelectedTextColor = AppStyles.kGradientEndColor;
+    final Color selectedTextColor = const Color(0xFF272323);
+    final Color unSelectedTextColor = const Color(0xFF272323);
 
     final Color textColor = isSelected
         ? selectedTextColor
@@ -78,8 +80,7 @@ class CourseLectureCard extends StatelessWidget {
 
                 LectureStateImage(watchState: watchState),
 
-                /// دي المسافة بين الأيقونة والكلام
-                /// قللها أو زودها براحتك
+                // المسافة بين الأيقونة والكلام
                 const SizedBox(width: 12),
 
                 Expanded(
@@ -125,8 +126,6 @@ class _LectureTitleAndDuration extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-
-        /// ده اللي بيخلي الكلام يمين وجنب الأيقونة
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -134,7 +133,7 @@ class _LectureTitleAndDuration extends StatelessWidget {
             textAlign: TextAlign.right,
             maxLines: isSelected ? 2 : 1,
             overflow: TextOverflow.ellipsis,
-            style: Styles.textStyle18.copyWith(
+            style: Styles.textStyle16.copyWith(
               color: textColor,
               fontWeight: FontWeight.w500,
               height: 1.35,
@@ -147,7 +146,7 @@ class _LectureTitleAndDuration extends StatelessWidget {
             duration,
             textAlign: TextAlign.right,
             style: Styles.textStyle14.copyWith(
-              color: textColor,
+              color: Color(0xFFb5b2bb),
               fontWeight: FontWeight.w400,
             ),
           ),
