@@ -1,7 +1,7 @@
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/tabs/exams_content.dart';
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/tabs/memos_content.dart';
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/tabs/notes_content.dart';
-import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/tabs/videos_content.dart';
+import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/contents/exams_content.dart';
+import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/contents/memos_content.dart';
+import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/contents/notes_content.dart';
+import 'package:bengo_app/Features/video_player/presentation%20/views/widgets/contents/videos_content.dart';
 import 'package:flutter/material.dart';
 
 import 'current_lecture_info.dart';

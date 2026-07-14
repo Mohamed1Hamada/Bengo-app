@@ -1,6 +1,8 @@
+import 'package:bengo_app/core/utils/app_router.dart';
 import 'package:bengo_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class VideoHeaderWidget extends StatelessWidget {
   const VideoHeaderWidget({super.key});
@@ -25,7 +27,8 @@ class VideoHeaderWidget extends StatelessWidget {
               children: [
                 IconButton(
                   icon: const Icon(Icons.chevron_left, color: Colors.white),
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () =>
+                      GoRouter.of(context).push(AppRouter.kHomeView),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
