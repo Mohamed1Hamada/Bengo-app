@@ -27,7 +27,7 @@ class LecturePriceButton extends StatelessWidget {
               padding: const EdgeInsets.all(7),
               child: FittedBox(
                 child: Text(
-                  price,
+                  '$price ج.م',
                   textAlign: TextAlign.center,
                   style: Styles.textStyle14.copyWith(
                     color: Colors.white,

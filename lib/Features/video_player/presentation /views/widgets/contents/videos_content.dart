@@ -34,13 +34,13 @@ class _VideosContentState extends State<VideosContent> {
       title: 'المحاضرة الرابعة - دفتر الأستاذ',
       duration: '41:45',
       watchState: LectureWatchState.locked,
-      price: '48 ج.م',
+      price: '48',
     ),
     _LectureItem(
       title: 'المحاضرة الخامسة - ميزان المراجعة',
       duration: '48:10',
       watchState: LectureWatchState.locked,
-      price: '60 ج.م',
+      price: '60',
     ),
   ];
 

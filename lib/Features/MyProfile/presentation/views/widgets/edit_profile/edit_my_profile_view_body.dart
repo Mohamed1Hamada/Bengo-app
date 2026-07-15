@@ -1,13 +1,11 @@
 import 'package:bengo_app/core/utils/asstes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'edit_profile_header.dart';
 import 'edit_profile_avatar.dart';
 import 'edit_profile_form.dart';
 import 'edit_profile_actions.dart';
 
-/// edit_my_profile_view_body.dart
-///
-/// جسم صفحة تعديل الملف الشخصي (يجمع الهيدر + الصورة + النموذج + الأزرار)
 class EditMyProfileViewBody extends StatelessWidget {
   const EditMyProfileViewBody({super.key});
   @override
@@ -24,7 +22,14 @@ class EditMyProfileViewBody extends StatelessWidget {
                 onPick: null,
               ),
               const EditProfileForm(),
-              EditProfileActions(onSave: () {}, onCancel: () {}),
+              EditProfileActions(
+                onSave: () {
+                  GoRouter.of(context).pop();
+                },
+                onCancel: () {
+                  GoRouter.of(context).pop();
+                },
+              ),
               const SizedBox(height: 24),
             ],
           ),
