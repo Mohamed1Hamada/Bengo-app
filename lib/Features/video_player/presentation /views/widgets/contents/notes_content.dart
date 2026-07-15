@@ -1,32 +1,43 @@
 import 'package:flutter/material.dart';
 
-import '../resources/course_resource_ui_model.dart';
-import '../resources/course_resources_list.dart';
+import '../resources/course_note_card.dart';
 
 class NotesContent extends StatelessWidget {
   const NotesContent({super.key});
 
-  static const List<CourseResourceUiModel> _items = [
-    CourseResourceUiModel(
+  static const List<NoteUiModel> _notes = [
+    NoteUiModel(
       title: 'ملاحظة هامة -\nالمحاضرة الأولى',
-      subtitle:
-          'يرجى التركيز على الفرق بين المحاسبة المالية والمحاسبة الإدارية في هذا الدرس لأنه سيكون جزء أساسي في امتحان النهائي.',
-      imagePath: 'assets/images/tapIcon4.png',
-      badgeLabel: 'هام',
-      isHighlighted: true,
-      height: 124,
+      description:
+          'يرجى التركيز على الفرق بين المحاسبة المالية والمحاسبة الإدارية في هذا الدرس لأنه سيكون جزء أساسي في الامتحان النهائي.',
+      isImportant: true,
     ),
-    CourseResourceUiModel(
+    NoteUiModel(
       title: 'نصيحة للمحاضرة',
-      subtitle:
-          'احرص على حل التمارين العملية بعد كل محاضرة لفهم القيود والمعادلات بشكل أفضل.',
-      imagePath: 'assets/images/tapIcon4.png',
-      height: 96,
+      description:
+          'احرص على حل التمارين العملية بعد كل محاضرة لفهم القيود والمعادلات بشكل مستمر.',
     ),
   ];
 
+  void _onNoteTap(BuildContext context, NoteUiModel note) {
+    debugPrint('Note tapped: ${note.title}');
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const CourseResourcesList(items: _items);
+    return Column(
+      children: [
+        for (int index = 0; index < _notes.length; index++) ...[
+          CourseNoteCard(
+            note: _notes[index],
+            onTap: () {
+              _onNoteTap(context, _notes[index]);
+            },
+          ),
+
+          if (index != _notes.length - 1) const SizedBox(height: 12),
+        ],
+      ],
+    );
   }
 }
